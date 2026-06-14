@@ -45,10 +45,10 @@ Google Play deployment additionally requires `ANDROID_JSON_KEY_FILE`.
 The app follows MVVM in a single-Activity Compose setup:
 
 - **`CompassApplication`** — Hilt entry point
-- **`MainActivity`** — Single Compose activity; registers sensor and location listeners; handles `ACCESS_LOCATION`
-  permission workflow
-- **`CompassViewModel`** — All UI state via `StateFlow`; debounced settings writes (1 second); loaded from
-  `SettingsRepository` on init
+- **`MainActivity`** — Single Compose activity; hosts `AppViewModel` and `CompassViewModel`; registers sensor and
+  location listeners; handles `ACCESS_LOCATION` permission workflow
+- **`AppViewModel`** — Night mode preference via `StateFlow`; reads from `SettingsRepository`
+- **`CompassViewModel`** — All compass UI states via `StateFlow`; loaded from `SettingsRepository` on init
 - **`ICompassViewModel`** / **`ComposeCompassViewModel`** — Interface + preview implementation used by all Compose
   screens
 
@@ -65,8 +65,7 @@ The app follows MVVM in a single-Activity Compose setup:
 
 Sensor events → `MainActivity` → `CompassViewModel` (StateFlow) → Compose UI
 
-Settings changes in the UI update `CompassViewModel` flows immediately, and are debounced 1 second before being written
-to DataStore.
+Settings changes are debounced 1 second before being written to DataStore.
 
 ### Location Handling
 
@@ -80,7 +79,7 @@ The `repeatOnLifecycle(RESUMED)` block re-triggers location handling whenever `t
 - **DI:** Hilt + KSP
 - **Persistence:** DataStore Preferences
 - **Sensors:** Android `SensorManager` (rotation vector + magnetic field)
-- **Build:** AGP 9.1.0, Kotlin 2.3.x, Java 11 toolchain
+- **Build:** AGP 9.x, Kotlin 2.3.x, Java 11 toolchain
 - **Testing:** JUnit4, Compose UI Test, kotlinx-coroutines-test, Fastlane Screengrab
 
 ## Branch Notes
