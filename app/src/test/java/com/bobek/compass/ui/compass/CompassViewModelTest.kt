@@ -42,8 +42,10 @@ import org.junit.Assert.assertSame
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
+import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
-private const val SETTINGS_DEBOUNCE_MILLIS = 1_000L
+private val DEBOUNCE = 1.seconds
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class CompassViewModelTest {
@@ -154,33 +156,33 @@ class CompassViewModelTest {
     @Test
     fun trueNorthIsPersistedToSettingsAfterDebounce() = runTest(testDispatcher) {
         viewModel.setTrueNorth(false)
-        advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS + 1)
+        advanceTimeBy(DEBOUNCE + 1.milliseconds)
         assertFalse(fakeSettingsRepository.trueNorthValue)
     }
 
     @Test
     fun hapticFeedbackIsPersistedToSettingsAfterDebounce() = runTest(testDispatcher) {
         viewModel.setHapticFeedback(false)
-        advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS + 1)
+        advanceTimeBy(DEBOUNCE + 1.milliseconds)
         assertFalse(fakeSettingsRepository.hapticFeedbackValue)
     }
 
     @Test
     fun screenOrientationLockedIsPersistedToSettingsAfterDebounce() = runTest(testDispatcher) {
         viewModel.setScreenOrientationLocked(false)
-        advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS + 1)
+        advanceTimeBy(DEBOUNCE + 1.milliseconds)
         assertFalse(fakeSettingsRepository.screenOrientationLockedValue)
     }
 
     @Test
     fun rapidChangesOnlyPersistLastValueAfterDebounce() = runTest(testDispatcher) {
         viewModel.setTrueNorth(false)
-        advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS - 1)
+        advanceTimeBy(DEBOUNCE - 1.milliseconds)
         // Debounce not expired yet — repository not yet updated
         assertTrue(fakeSettingsRepository.trueNorthValue)
 
         viewModel.setTrueNorth(true)
-        advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS + 1)
+        advanceTimeBy(DEBOUNCE + 1.milliseconds)
         // Only the last value is persisted
         assertTrue(fakeSettingsRepository.trueNorthValue)
     }

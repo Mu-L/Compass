@@ -195,7 +195,6 @@ fun SettingsScreen(
         NightModeDialog(
             viewModel = appViewModel,
             onDismiss = {
-                @Suppress("AssignedValueIsNeverRead")
                 showNightModeDialog = false
             }
         )

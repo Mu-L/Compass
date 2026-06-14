@@ -118,7 +118,6 @@ fun CompassScreen(
         SensorStatusDialog(
             viewModel = viewModel,
             onDismiss = {
-                @Suppress("AssignedValueIsNeverRead")
                 showSensorStatusDialog = false
             }
         )

@@ -34,8 +34,9 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.seconds
 
-private const val SETTINGS_DEBOUNCE_MILLIS = 1_000L
+private val SETTINGS_DEBOUNCE = 1.seconds
 
 interface ICompassViewModel {
     fun getAzimuthFlow(): StateFlow<Azimuth>
@@ -90,15 +91,15 @@ class CompassViewModel @Inject constructor(
 
     private fun setupFlowsToSettings() {
         viewModelScope.launch {
-            trueNorthFlow.drop(1).debounce(SETTINGS_DEBOUNCE_MILLIS)
+            trueNorthFlow.drop(1).debounce(SETTINGS_DEBOUNCE)
                 .collect { settingsRepository.setTrueNorth(it) }
         }
         viewModelScope.launch {
-            hapticFeedbackFlow.drop(1).debounce(SETTINGS_DEBOUNCE_MILLIS)
+            hapticFeedbackFlow.drop(1).debounce(SETTINGS_DEBOUNCE)
                 .collect { settingsRepository.setHapticFeedback(it) }
         }
         viewModelScope.launch {
-            screenOrientationLockedFlow.drop(1).debounce(SETTINGS_DEBOUNCE_MILLIS)
+            screenOrientationLockedFlow.drop(1).debounce(SETTINGS_DEBOUNCE)
                 .collect { settingsRepository.setScreenOrientationLocked(it) }
         }
     }
