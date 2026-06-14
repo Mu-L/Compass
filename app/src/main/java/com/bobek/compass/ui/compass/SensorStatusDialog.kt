@@ -41,7 +41,6 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.bobek.compass.ICompassViewModel
 import com.bobek.compass.R
 import com.bobek.compass.ui.TestConstants
 

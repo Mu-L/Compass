@@ -16,12 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.bobek.compass
+package com.bobek.compass.ui.compass
 
 import android.location.Location
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bobek.compass.data.AppNightMode
 import com.bobek.compass.data.Azimuth
 import com.bobek.compass.data.LocationStatus
 import com.bobek.compass.data.SensorAccuracy
@@ -53,8 +52,6 @@ interface ICompassViewModel {
     fun setLocation(location: Location?)
     fun getLocationStatusFlow(): StateFlow<LocationStatus>
     fun setLocationStatus(locationStatus: LocationStatus)
-    fun getNightModeFlow(): StateFlow<AppNightMode>
-    fun setNightMode(nightMode: AppNightMode)
 }
 
 @HiltViewModel
@@ -77,8 +74,6 @@ class CompassViewModel @Inject constructor(
 
     private val locationStatusFlow = MutableStateFlow(LocationStatus.NOT_PRESENT)
 
-    private val nightModeFlow = MutableStateFlow(AppNightMode.FOLLOW_SYSTEM)
-
     init {
         viewModelScope.launch {
             initFromSettings()
@@ -91,7 +86,6 @@ class CompassViewModel @Inject constructor(
         settingsRepository.getTrueNorth().firstOrNull()?.let { trueNorthFlow.value = it }
         settingsRepository.getHapticFeedback().firstOrNull()?.let { hapticFeedbackFlow.value = it }
         settingsRepository.getScreenOrientationLocked().firstOrNull()?.let { screenOrientationLockedFlow.value = it }
-        settingsRepository.getNightMode().firstOrNull()?.let { nightModeFlow.value = it }
     }
 
     private fun setupFlowsToSettings() {
@@ -106,10 +100,6 @@ class CompassViewModel @Inject constructor(
         viewModelScope.launch {
             screenOrientationLockedFlow.drop(1).debounce(SETTINGS_DEBOUNCE_MILLIS)
                 .collect { settingsRepository.setScreenOrientationLocked(it) }
-        }
-        viewModelScope.launch {
-            nightModeFlow.drop(1).debounce(SETTINGS_DEBOUNCE_MILLIS)
-                .collect { settingsRepository.setNightMode(it) }
         }
     }
 
@@ -155,12 +145,6 @@ class CompassViewModel @Inject constructor(
     override fun setLocationStatus(locationStatus: LocationStatus) {
         locationStatusFlow.value = locationStatus
     }
-
-    override fun getNightModeFlow() = nightModeFlow
-
-    override fun setNightMode(nightMode: AppNightMode) {
-        nightModeFlow.value = nightMode
-    }
 }
 
 class ComposeCompassViewModel(
@@ -170,8 +154,7 @@ class ComposeCompassViewModel(
     val hapticFeedback: Boolean = true,
     val screenOrientationLocked: Boolean = true,
     val location: Location? = Location(""),
-    val locationStatus: LocationStatus = LocationStatus.NOT_PRESENT,
-    val nightMode: AppNightMode = AppNightMode.FOLLOW_SYSTEM
+    val locationStatus: LocationStatus = LocationStatus.NOT_PRESENT
 ) : ICompassViewModel {
     override fun getAzimuthFlow() = MutableStateFlow(azimuth)
     override fun setAzimuth(azimuth: Azimuth) = Unit
@@ -187,6 +170,4 @@ class ComposeCompassViewModel(
     override fun setLocation(location: Location?) = Unit
     override fun getLocationStatusFlow() = MutableStateFlow(locationStatus)
     override fun setLocationStatus(locationStatus: LocationStatus) = Unit
-    override fun getNightModeFlow() = MutableStateFlow(nightMode)
-    override fun setNightMode(nightMode: AppNightMode) = Unit
 }

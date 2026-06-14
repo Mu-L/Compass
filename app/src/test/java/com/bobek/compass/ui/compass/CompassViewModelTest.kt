@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.bobek.compass
+package com.bobek.compass.ui.compass
 
 import android.location.Location
 import com.bobek.compass.data.AppNightMode
@@ -104,11 +104,6 @@ class CompassViewModelTest {
         assertTrue(viewModel.getScreenOrientationLocked().value)
     }
 
-    @Test
-    fun nightModeLoadedFromSettings() {
-        assertEquals(AppNightMode.FOLLOW_SYSTEM, viewModel.getNightModeFlow().value)
-    }
-
     // Setters update flows immediately
 
     @Test
@@ -139,12 +134,6 @@ class CompassViewModelTest {
     fun setScreenOrientationLockedUpdatesFlow() {
         viewModel.setScreenOrientationLocked(false)
         assertFalse(viewModel.getScreenOrientationLocked().value)
-    }
-
-    @Test
-    fun setNightModeUpdatesFlow() {
-        viewModel.setNightMode(AppNightMode.YES)
-        assertEquals(AppNightMode.YES, viewModel.getNightModeFlow().value)
     }
 
     @Test
@@ -184,13 +173,6 @@ class CompassViewModelTest {
     }
 
     @Test
-    fun nightModeIsPersistedToSettingsAfterDebounce() = runTest(testDispatcher) {
-        viewModel.setNightMode(AppNightMode.NO)
-        advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS + 1)
-        assertEquals(AppNightMode.NO, fakeSettingsRepository.nightModeValue)
-    }
-
-    @Test
     fun rapidChangesOnlyPersistLastValueAfterDebounce() = runTest(testDispatcher) {
         viewModel.setTrueNorth(false)
         advanceTimeBy(SETTINGS_DEBOUNCE_MILLIS - 1)
@@ -209,13 +191,11 @@ private class FakeSettingsRepository : SettingsRepository {
     private val trueNorthFlow = MutableStateFlow(true)
     private val hapticFeedbackFlow = MutableStateFlow(true)
     private val screenOrientationLockedFlow = MutableStateFlow(true)
-    private val nightModeFlow = MutableStateFlow(AppNightMode.FOLLOW_SYSTEM)
     private val accessLocationPermissionRequestedFlow = MutableStateFlow(false)
 
     val trueNorthValue get() = trueNorthFlow.value
     val hapticFeedbackValue get() = hapticFeedbackFlow.value
     val screenOrientationLockedValue get() = screenOrientationLockedFlow.value
-    val nightModeValue get() = nightModeFlow.value
 
     override fun getTrueNorth(): Flow<Boolean> = trueNorthFlow
     override suspend fun setTrueNorth(trueNorth: Boolean) {
@@ -232,10 +212,8 @@ private class FakeSettingsRepository : SettingsRepository {
         screenOrientationLockedFlow.value = screenOrientationLocked
     }
 
-    override fun getNightMode(): Flow<AppNightMode> = nightModeFlow
-    override suspend fun setNightMode(nightMode: AppNightMode) {
-        nightModeFlow.value = nightMode
-    }
+    override fun getNightMode(): Flow<AppNightMode> = MutableStateFlow(AppNightMode.FOLLOW_SYSTEM)
+    override suspend fun setNightMode(nightMode: AppNightMode) = Unit
 
     override fun getAccessLocationPermissionRequested(): Flow<Boolean> = accessLocationPermissionRequestedFlow
     override suspend fun setAccessLocationPermissionRequested(accessLocationPermissionRequested: Boolean) {

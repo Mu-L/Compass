@@ -62,8 +62,6 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
-import com.bobek.compass.ComposeCompassViewModel
-import com.bobek.compass.ICompassViewModel
 import com.bobek.compass.R
 import com.bobek.compass.data.LocationStatus
 import com.bobek.compass.ui.TestConstants

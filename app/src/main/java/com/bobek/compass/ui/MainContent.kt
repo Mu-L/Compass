@@ -32,8 +32,8 @@ import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.bobek.compass.ComposeCompassViewModel
-import com.bobek.compass.ICompassViewModel
+import com.bobek.compass.ui.compass.ComposeCompassViewModel
+import com.bobek.compass.ui.compass.ICompassViewModel
 import com.bobek.compass.R
 import com.bobek.compass.data.AppNightMode
 import com.bobek.compass.ui.compass.CompassScreen
@@ -54,12 +54,13 @@ private val MANUAL_LICENSE_RESOURCES = mapOf(
 @Composable
 @PreviewScreenSizes
 fun MainContent(
-    viewModel: ICompassViewModel = ComposeCompassViewModel(),
+    appViewModel: IAppViewModel = ComposeAppViewModel(),
+    compassViewModel: ICompassViewModel = ComposeCompassViewModel(),
     onLocationReload: () -> Unit = {}
 ) {
     val navController = rememberNavController()
-    val screenOrientationLocked by viewModel.getScreenOrientationLocked().collectAsState()
-    val nightMode by viewModel.getNightModeFlow().collectAsState()
+    val nightMode by appViewModel.getNightModeFlow().collectAsState()
+    val screenOrientationLocked by compassViewModel.getScreenOrientationLocked().collectAsState()
 
     val isDarkTheme = when (nightMode) {
         AppNightMode.NO -> false
@@ -77,14 +78,15 @@ fun MainContent(
         NavHost(navController = navController, startDestination = "compass") {
             composable("compass") {
                 CompassScreen(
-                    viewModel = viewModel,
+                    viewModel = compassViewModel,
                     onSettingsClick = { navController.navigate("settings") },
                     onLocationReload = onLocationReload
                 )
             }
             composable("settings") {
                 SettingsScreen(
-                    viewModel = viewModel,
+                    appViewModel = appViewModel,
+                    compassViewModel = compassViewModel,
                     onBackClick = { navController.popBackStack() },
                     onThirdPartyLicensesClick = { navController.navigate("licenses") }
                 )

@@ -1,6 +1,6 @@
 /*
  * This file is part of Compass.
- * Copyright (C) 2025 Philipp Bobek <philipp.bobek@mailbox.org>
+ * Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,9 @@ import com.bobek.compass.data.LocationStatus
 import com.bobek.compass.data.RotationVector
 import com.bobek.compass.data.SensorAccuracy
 import com.bobek.compass.settings.SettingsRepository
+import com.bobek.compass.ui.AppViewModel
 import com.bobek.compass.ui.MainContent
+import com.bobek.compass.ui.compass.CompassViewModel
 import com.bobek.compass.util.MathUtils
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
@@ -66,7 +68,8 @@ const val OPTION_INSTRUMENTED_TEST = "OPTION_INSTRUMENTED_TEST"
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    internal val viewModel: CompassViewModel by viewModels()
+    private val appViewModel: AppViewModel by viewModels()
+    internal val compassViewModel: CompassViewModel by viewModels()
     private val accessLocationPermissionRequest = registerAccessLocationPermissionRequest()
 
     @Inject
@@ -81,7 +84,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MainContent(
-                viewModel = viewModel,
+                appViewModel = appViewModel,
+                compassViewModel = compassViewModel,
                 onLocationReload = ::requestLocation
             )
         }
@@ -91,7 +95,7 @@ class MainActivity : ComponentActivity() {
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                viewModel.getTrueNorthFlow().collect { trueNorth ->
+                compassViewModel.getTrueNorthFlow().collect { trueNorth ->
                     if (trueNorth) handleLocationPermission()
                 }
             }
@@ -161,7 +165,7 @@ class MainActivity : ComponentActivity() {
             SensorManager.SENSOR_STATUS_ACCURACY_HIGH -> SensorAccuracy.HIGH
             else -> SensorAccuracy.NO_CONTACT
         }
-        viewModel.setSensorAccuracy(sensorAccuracy)
+        compassViewModel.setSensorAccuracy(sensorAccuracy)
     }
 
     private fun updateCompass(event: SensorEvent) {
@@ -169,16 +173,16 @@ class MainActivity : ComponentActivity() {
         val displayRotation = getDisplayRotation()
         val magneticAzimuth = MathUtils.calculateAzimuth(rotationVector, displayRotation)
 
-        if (viewModel.getTrueNorthFlow().value) {
-            val location = viewModel.getLocationFlow().value
+        if (compassViewModel.getTrueNorthFlow().value) {
+            val location = compassViewModel.getLocationFlow().value
             if (location != null) {
                 val magneticDeclination = MathUtils.getMagneticDeclination(location)
-                viewModel.setAzimuth(magneticAzimuth + magneticDeclination)
+                compassViewModel.setAzimuth(magneticAzimuth + magneticDeclination)
             } else {
-                viewModel.setAzimuth(magneticAzimuth)
+                compassViewModel.setAzimuth(magneticAzimuth)
             }
         } else {
-            viewModel.setAzimuth(magneticAzimuth)
+            compassViewModel.setAzimuth(magneticAzimuth)
         }
     }
 
@@ -199,7 +203,7 @@ class MainActivity : ComponentActivity() {
 
     private suspend fun handleLocationPermission() {
         if (accessLocationPermissionDenied()) {
-            viewModel.setLocationStatus(LocationStatus.LOADING)
+            compassViewModel.setLocationStatus(LocationStatus.LOADING)
             startAccessLocationPermissionRequestWorkflow()
         } else {
             requestLocation()
@@ -269,7 +273,7 @@ class MainActivity : ComponentActivity() {
                 requestLocation()
             } else {
                 Log.i(TAG, "Location permission denied")
-                viewModel.setLocationStatus(LocationStatus.PERMISSION_DENIED)
+                compassViewModel.setLocationStatus(LocationStatus.PERMISSION_DENIED)
                 lifecycleScope.launch {
                     settingsRepository.setAccessLocationPermissionRequested(true)
                 }
@@ -277,7 +281,7 @@ class MainActivity : ComponentActivity() {
         }
 
     fun requestLocation() {
-        if (!viewModel.getTrueNorthFlow().value) return
+        if (!compassViewModel.getTrueNorthFlow().value) return
 
         val locationManager = locationManager ?: run {
             Log.w(TAG, "LocationManager not present")
@@ -291,25 +295,25 @@ class MainActivity : ComponentActivity() {
         if (ContextCompat.checkSelfPermission(this, ACCESS_COARSE_LOCATION) != PERMISSION_GRANTED
             && ContextCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PERMISSION_GRANTED
         ) {
-            viewModel.setLocationStatus(LocationStatus.PERMISSION_DENIED)
+            compassViewModel.setLocationStatus(LocationStatus.PERMISSION_DENIED)
             return
         }
 
         if (!LocationManagerCompat.isLocationEnabled(locationManager)) {
             Log.w(TAG, "Location is disabled")
-            viewModel.setLocationStatus(LocationStatus.NOT_PRESENT)
+            compassViewModel.setLocationStatus(LocationStatus.NOT_PRESENT)
             showErrorDialog(AppError.LOCATION_DISABLED)
             return
         }
 
         val provider = getBestLocationProvider() ?: run {
             Log.w(TAG, "No LocationProvider available")
-            viewModel.setLocationStatus(LocationStatus.NOT_PRESENT)
+            compassViewModel.setLocationStatus(LocationStatus.NOT_PRESENT)
             showErrorDialog(AppError.NO_LOCATION_PROVIDER_AVAILABLE)
             return
         }
 
-        viewModel.setLocationStatus(LocationStatus.LOADING)
+        compassViewModel.setLocationStatus(LocationStatus.LOADING)
         val listener = createLocationListener(locationManager)
         locationListener = listener
         locationManager.requestLocationUpdates(provider, 0L, 0f, listener, Looper.getMainLooper())
@@ -325,7 +329,7 @@ class MainActivity : ComponentActivity() {
         override fun onProviderDisabled(provider: String) {
             locationManager.removeUpdates(this)
             locationListener = null
-            viewModel.setLocationStatus(LocationStatus.NOT_PRESENT)
+            compassViewModel.setLocationStatus(LocationStatus.NOT_PRESENT)
         }
     }
 
@@ -353,7 +357,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setLocation(location: Location) {
-        viewModel.setLocation(location)
-        viewModel.setLocationStatus(LocationStatus.PRESENT)
+        compassViewModel.setLocation(location)
+        compassViewModel.setLocationStatus(LocationStatus.PRESENT)
     }
 }

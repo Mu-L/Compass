@@ -67,28 +67,28 @@ abstract class AbstractAndroidTest {
 
     protected fun setAzimuth(degrees: Float) {
         composeTestRule.runOnUiThread {
-            composeTestRule.activity.viewModel.setAzimuth(Azimuth(degrees))
+            composeTestRule.activity.compassViewModel.setAzimuth(Azimuth(degrees))
         }
         composeTestRule.waitForIdle()
     }
 
     protected fun setAccuracy(accuracy: SensorAccuracy) {
         composeTestRule.runOnUiThread {
-            composeTestRule.activity.viewModel.setSensorAccuracy(accuracy)
+            composeTestRule.activity.compassViewModel.setSensorAccuracy(accuracy)
         }
         composeTestRule.waitForIdle()
     }
 
     protected fun setTrueNorth(trueNorth: Boolean) {
         composeTestRule.runOnUiThread {
-            composeTestRule.activity.viewModel.setTrueNorth(trueNorth)
+            composeTestRule.activity.compassViewModel.setTrueNorth(trueNorth)
         }
         composeTestRule.waitForIdle()
     }
 
     protected fun setScreenOrientationLocked(screenOrientationLocked: Boolean) {
         composeTestRule.runOnUiThread {
-            composeTestRule.activity.viewModel.setScreenOrientationLocked(screenOrientationLocked)
+            composeTestRule.activity.compassViewModel.setScreenOrientationLocked(screenOrientationLocked)
         }
         composeTestRule.waitForIdle()
     }

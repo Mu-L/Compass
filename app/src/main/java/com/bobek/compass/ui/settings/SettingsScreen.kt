@@ -55,10 +55,12 @@ import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.bobek.compass.BuildConfig
-import com.bobek.compass.ComposeCompassViewModel
-import com.bobek.compass.ICompassViewModel
+import com.bobek.compass.ui.compass.ComposeCompassViewModel
+import com.bobek.compass.ui.compass.ICompassViewModel
 import com.bobek.compass.R
 import com.bobek.compass.data.AppNightMode
+import com.bobek.compass.ui.ComposeAppViewModel
+import com.bobek.compass.ui.IAppViewModel
 
 private const val TAG = "SettingsScreen"
 
@@ -66,14 +68,15 @@ private const val TAG = "SettingsScreen"
 @PreviewScreenSizes
 @OptIn(ExperimentalMaterial3Api::class)
 fun SettingsScreen(
-    viewModel: ICompassViewModel = ComposeCompassViewModel(),
+    appViewModel: IAppViewModel = ComposeAppViewModel(),
+    compassViewModel: ICompassViewModel = ComposeCompassViewModel(),
     onBackClick: () -> Unit = {},
     onThirdPartyLicensesClick: () -> Unit = {}
 ) {
     val context = LocalContext.current
-    val trueNorth by viewModel.getTrueNorthFlow().collectAsState()
-    val hapticFeedback by viewModel.getHapticFeedbackFlow().collectAsState()
-    val nightMode by viewModel.getNightModeFlow().collectAsState()
+    val trueNorth by compassViewModel.getTrueNorthFlow().collectAsState()
+    val hapticFeedback by compassViewModel.getHapticFeedbackFlow().collectAsState()
+    val nightMode by appViewModel.getNightModeFlow().collectAsState()
 
     var showNightModeDialog by rememberSaveable { mutableStateOf(false) }
 
@@ -110,7 +113,7 @@ fun SettingsScreen(
                             onCheckedChange = null
                         )
                     },
-                    modifier = Modifier.clickable { viewModel.setTrueNorth(!trueNorth) }
+                    modifier = Modifier.clickable { compassViewModel.setTrueNorth(!trueNorth) }
                 )
 
                 ListItem(
@@ -122,7 +125,7 @@ fun SettingsScreen(
                             onCheckedChange = null
                         )
                     },
-                    modifier = Modifier.clickable { viewModel.setHapticFeedback(!hapticFeedback) }
+                    modifier = Modifier.clickable { compassViewModel.setHapticFeedback(!hapticFeedback) }
                 )
             }
 
@@ -190,7 +193,7 @@ fun SettingsScreen(
 
     if (showNightModeDialog) {
         NightModeDialog(
-            viewModel = viewModel,
+            viewModel = appViewModel,
             onDismiss = {
                 @Suppress("AssignedValueIsNeverRead")
                 showNightModeDialog = false
@@ -228,7 +231,7 @@ private fun SettingsSection(
 @Composable
 @Preview
 private fun NightModeDialog(
-    viewModel: ICompassViewModel = ComposeCompassViewModel(),
+    viewModel: IAppViewModel = ComposeAppViewModel(),
     onDismiss: () -> Unit = {},
 ) {
     val nightMode by viewModel.getNightModeFlow().collectAsState()

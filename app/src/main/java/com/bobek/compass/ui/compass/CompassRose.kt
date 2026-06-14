@@ -51,8 +51,6 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import com.bobek.compass.ComposeCompassViewModel
-import com.bobek.compass.ICompassViewModel
 import com.bobek.compass.R
 import com.bobek.compass.data.Azimuth
 import com.bobek.compass.ui.TestConstants
