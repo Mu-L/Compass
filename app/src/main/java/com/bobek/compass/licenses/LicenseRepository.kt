@@ -34,9 +34,12 @@ private val LICENSE_URL_RESOURCES = mapOf(
     "https://www.gnu.org/licenses/lgpl+gpl-3.0.txt" to R.raw.license_lgpl_gpl_3_0
 )
 
-object ThirdPartyLicenseRepository {
+object LicenseRepository {
 
-    fun getLibraryNames(resources: Resources): List<String> {
+    fun getAppLicenseContent(resources: Resources): String =
+        readRawResource(resources, R.raw.license_gpl_3_0)
+
+    fun getThirdPartyLibraryNames(resources: Resources): List<String> {
         val ossLicenseNames = resources
             .openRawResource(R.raw.third_party_license_metadata)
             .use(OssLicensesParser::parseMetadata)
@@ -45,7 +48,7 @@ object ThirdPartyLicenseRepository {
         return (ossLicenseNames + LICENSE_MANUAL_RESOURCES.keys).sorted()
     }
 
-    fun getLicenseContent(resources: Resources, libraryName: String): String {
+    fun getThirdPartyLicenseContent(resources: Resources, libraryName: String): String {
         val manualResourceId = LICENSE_MANUAL_RESOURCES[libraryName]
 
         return if (manualResourceId != null) {
@@ -55,12 +58,12 @@ object ThirdPartyLicenseRepository {
                 .openRawResource(R.raw.third_party_license_metadata)
                 .use(OssLicensesParser::parseMetadata)
                 .find { it.libraryName == libraryName }
-                ?.let { getLicenseContent(resources, it) }
+                ?.let { getThirdPartyLicenseContent(resources, it) }
                 ?: ""
         }
     }
 
-    private fun getLicenseContent(resources: Resources, metadata: ThirdPartyLicenseMetadata): String {
+    private fun getThirdPartyLicenseContent(resources: Resources, metadata: ThirdPartyLicenseMetadata): String {
         val licenseUrl = resources
             .openRawResource(R.raw.third_party_licenses)
             .use { OssLicensesParser.parseLicense(metadata, it) }

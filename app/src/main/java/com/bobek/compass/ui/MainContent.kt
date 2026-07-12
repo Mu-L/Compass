@@ -27,17 +27,19 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.platform.LocalResources
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.bobek.compass.R
 import com.bobek.compass.ui.compass.ComposeCompassViewModel
 import com.bobek.compass.ui.compass.ICompassViewModel
 import com.bobek.compass.data.AppNightMode
 import com.bobek.compass.ui.compass.CompassScreen
-import com.bobek.compass.licenses.ThirdPartyLicenseRepository
-import com.bobek.compass.ui.licenses.ThirdPartyLicenseScreen
-import com.bobek.compass.ui.licenses.ThirdPartyLicenseScreenState
+import com.bobek.compass.licenses.LicenseRepository
+import com.bobek.compass.ui.licenses.LicenseScreen
+import com.bobek.compass.ui.licenses.LicenseScreenState
 import com.bobek.compass.ui.licenses.ThirdPartyLicensesScreen
 import com.bobek.compass.ui.settings.SettingsScreen
 import com.bobek.compass.ui.theme.AppTheme
@@ -81,14 +83,31 @@ fun MainContent(
                     appViewModel = appViewModel,
                     compassViewModel = compassViewModel,
                     onBackClick = { navController.popBackStack() },
+                    onLicenseClick = { navController.navigate("license") },
                     onThirdPartyLicensesClick = { navController.navigate("licenses") }
+                )
+            }
+            composable("license") {
+                val resources = LocalResources.current
+                val licenseContent by produceState(initialValue = "") {
+                    value = withContext(Dispatchers.IO) {
+                        LicenseRepository.getAppLicenseContent(resources)
+                    }
+                }
+
+                LicenseScreen(
+                    state = LicenseScreenState(
+                        title = stringResource(R.string.license_name),
+                        licenseContent = licenseContent,
+                    ),
+                    onBackClick = { navController.popBackStack() }
                 )
             }
             composable("licenses") {
                 val resources = LocalResources.current
                 val libraryNames by produceState(initialValue = emptyList()) {
                     value = withContext(Dispatchers.IO) {
-                        ThirdPartyLicenseRepository.getLibraryNames(resources)
+                        LicenseRepository.getThirdPartyLibraryNames(resources)
                     }
                 }
 
@@ -105,13 +124,13 @@ fun MainContent(
                 val resources = LocalResources.current
                 val licenseContent by produceState(initialValue = "", key1 = libraryName) {
                     value = withContext(Dispatchers.IO) {
-                        ThirdPartyLicenseRepository.getLicenseContent(resources, libraryName)
+                        LicenseRepository.getThirdPartyLicenseContent(resources, libraryName)
                     }
                 }
 
-                ThirdPartyLicenseScreen(
-                    state = ThirdPartyLicenseScreenState(
-                        libraryName = libraryName,
+                LicenseScreen(
+                    state = LicenseScreenState(
+                        title = libraryName,
                         licenseContent = licenseContent,
                     ),
                     onBackClick = { navController.popBackStack() }

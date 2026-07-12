@@ -71,6 +71,7 @@ fun SettingsScreen(
     appViewModel: IAppViewModel = ComposeAppViewModel(),
     compassViewModel: ICompassViewModel = ComposeCompassViewModel(),
     onBackClick: () -> Unit = {},
+    onLicenseClick: () -> Unit = {},
     onThirdPartyLicensesClick: () -> Unit = {}
 ) {
     val context = LocalContext.current
@@ -162,10 +163,7 @@ fun SettingsScreen(
                 ListItem(
                     headlineContent = { Text(stringResource(R.string.license)) },
                     supportingContent = { Text(stringResource(R.string.license_name)) },
-                    modifier = Modifier.clickable {
-                        val intent = Intent(Intent.ACTION_VIEW, "https://www.gnu.org/licenses/gpl-3.0.txt".toUri())
-                        context.startActivitySafely(intent)
-                    }
+                    modifier = Modifier.clickable { onLicenseClick() }
                 )
 
                 ListItem(
