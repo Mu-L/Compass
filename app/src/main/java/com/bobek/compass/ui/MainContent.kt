@@ -19,7 +19,6 @@
 package com.bobek.compass.ui
 
 import android.content.pm.ActivityInfo
-import android.content.res.Resources
 import android.net.Uri
 import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -34,29 +33,16 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.bobek.compass.ui.compass.ComposeCompassViewModel
 import com.bobek.compass.ui.compass.ICompassViewModel
-import com.bobek.compass.R
 import com.bobek.compass.data.AppNightMode
 import com.bobek.compass.ui.compass.CompassScreen
+import com.bobek.compass.licenses.ThirdPartyLicenseRepository
 import com.bobek.compass.ui.licenses.ThirdPartyLicenseScreen
 import com.bobek.compass.ui.licenses.ThirdPartyLicenseScreenState
 import com.bobek.compass.ui.licenses.ThirdPartyLicensesScreen
 import com.bobek.compass.ui.settings.SettingsScreen
 import com.bobek.compass.ui.theme.AppTheme
-import de.philipp_bobek.oss_licenses_parser.OssLicensesParser
-import de.philipp_bobek.oss_licenses_parser.ThirdPartyLicenseMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-
-private val LICENSE_MANUAL_RESOURCES = mapOf(
-    "Material Symbols" to R.raw.license_apache_2_0
-)
-
-private val LICENSE_URL_RESOURCES = mapOf(
-    "http://www.apache.org/licenses/LICENSE-2.0.txt" to R.raw.license_apache_2_0,
-    "https://www.apache.org/licenses/LICENSE-2.0.txt" to R.raw.license_apache_2_0,
-    "https://opensource.org/licenses/BSD-3-Clause" to R.raw.license_bsd_3_clause,
-    "https://www.gnu.org/licenses/lgpl+gpl-3.0.txt" to R.raw.license_lgpl_gpl_3_0
-)
 
 @Composable
 @PreviewScreenSizes
@@ -102,7 +88,7 @@ fun MainContent(
                 val resources = LocalResources.current
                 val libraryNames by produceState(initialValue = emptyList()) {
                     value = withContext(Dispatchers.IO) {
-                        getLibraryNames(resources)
+                        ThirdPartyLicenseRepository.getLibraryNames(resources)
                     }
                 }
 
@@ -119,7 +105,7 @@ fun MainContent(
                 val resources = LocalResources.current
                 val licenseContent by produceState(initialValue = "", key1 = libraryName) {
                     value = withContext(Dispatchers.IO) {
-                        getLicenseContent(resources, libraryName)
+                        ThirdPartyLicenseRepository.getLicenseContent(resources, libraryName)
                     }
                 }
 
@@ -134,41 +120,3 @@ fun MainContent(
         }
     }
 }
-
-private fun getLibraryNames(resources: Resources): List<String> {
-    val ossLicenseNames = resources
-        .openRawResource(R.raw.third_party_license_metadata)
-        .use(OssLicensesParser::parseMetadata)
-        .map { it.libraryName }
-
-    return (ossLicenseNames + LICENSE_MANUAL_RESOURCES.keys).sorted()
-}
-
-private fun getLicenseContent(resources: Resources, libraryName: String): String {
-    val manualResourceId = LICENSE_MANUAL_RESOURCES[libraryName]
-
-    return if (manualResourceId != null) {
-        readRawResource(resources, manualResourceId)
-    } else {
-        resources
-            .openRawResource(R.raw.third_party_license_metadata)
-            .use(OssLicensesParser::parseMetadata)
-            .find { it.libraryName == libraryName }
-            ?.let { getLicenseContent(resources, it) }
-            ?: ""
-    }
-}
-
-private fun getLicenseContent(resources: Resources, metadata: ThirdPartyLicenseMetadata): String {
-    val licenseUrl = resources
-        .openRawResource(R.raw.third_party_licenses)
-        .use { OssLicensesParser.parseLicense(metadata, it) }
-        .licenseContent
-
-    return LICENSE_URL_RESOURCES[licenseUrl]
-        ?.let {readRawResource(resources, it)}
-        ?: licenseUrl
-}
-
-private fun readRawResource(resources: Resources, resourceId: Int): String =
-    resources.openRawResource(resourceId).bufferedReader().readText()
