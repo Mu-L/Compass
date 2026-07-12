@@ -47,8 +47,15 @@ import de.philipp_bobek.oss_licenses_parser.ThirdPartyLicenseMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-private val MANUAL_LICENSE_RESOURCES = mapOf(
+private val LICENSE_MANUAL_RESOURCES = mapOf(
     "Material Symbols" to R.raw.license_apache_2_0
+)
+
+private val LICENSE_URL_RESOURCES = mapOf(
+    "http://www.apache.org/licenses/LICENSE-2.0.txt" to R.raw.license_apache_2_0,
+    "https://www.apache.org/licenses/LICENSE-2.0.txt" to R.raw.license_apache_2_0,
+    "https://opensource.org/licenses/BSD-3-Clause" to R.raw.license_bsd_3_clause,
+    "https://www.gnu.org/licenses/lgpl+gpl-3.0.txt" to R.raw.license_lgpl_gpl_3_0
 )
 
 @Composable
@@ -134,14 +141,14 @@ private fun getLibraryNames(resources: Resources): List<String> {
         .use(OssLicensesParser::parseMetadata)
         .map { it.libraryName }
 
-    return (ossLicenseNames + MANUAL_LICENSE_RESOURCES.keys).sorted()
+    return (ossLicenseNames + LICENSE_MANUAL_RESOURCES.keys).sorted()
 }
 
 private fun getLicenseContent(resources: Resources, libraryName: String): String {
-    val manualResourceId = MANUAL_LICENSE_RESOURCES[libraryName]
+    val manualResourceId = LICENSE_MANUAL_RESOURCES[libraryName]
 
     return if (manualResourceId != null) {
-        resources.openRawResource(manualResourceId).bufferedReader().readText()
+        readRawResource(resources, manualResourceId)
     } else {
         resources
             .openRawResource(R.raw.third_party_license_metadata)
@@ -152,8 +159,16 @@ private fun getLicenseContent(resources: Resources, libraryName: String): String
     }
 }
 
-private fun getLicenseContent(resources: Resources, metadata: ThirdPartyLicenseMetadata): String =
-    resources
+private fun getLicenseContent(resources: Resources, metadata: ThirdPartyLicenseMetadata): String {
+    val licenseUrl = resources
         .openRawResource(R.raw.third_party_licenses)
         .use { OssLicensesParser.parseLicense(metadata, it) }
         .licenseContent
+
+    return LICENSE_URL_RESOURCES[licenseUrl]
+        ?.let {readRawResource(resources, it)}
+        ?: licenseUrl
+}
+
+private fun readRawResource(resources: Resources, resourceId: Int): String =
+    resources.openRawResource(resourceId).bufferedReader().readText()
