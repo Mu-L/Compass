@@ -4,9 +4,9 @@
 
 # Compass
 
-### Simple and beautiful compass for Android
+### A simple and clean compass for Android
 
-This project is intended to offer a simple and good-looking compass for Android
+This project aims to provide a clean and reliable compass for Android.
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
 alt="Get it on F-Droid"
@@ -26,10 +26,10 @@ height="80">](https://github.com/Kr0oked/Compass/releases/latest)
 * Shows exact degrees and cardinal direction
 * Displays sensor status
 * Haptic feedback
-* Light and Dark theme
+* Light and dark theme
 * No advertisements
 * No trackers
-* No annoyance
+* No unnecessary permissions
 
 ## Screenshots
 
@@ -38,11 +38,11 @@ height="80">](https://github.com/Kr0oked/Compass/releases/latest)
 
 ## Translations
 
-Translations can be added on [Weblate](https://hosted.weblate.org/engage/compass/).
+Help translate the app into your language on [Weblate](https://hosted.weblate.org/engage/compass/).
 
 [![Translation status](https://hosted.weblate.org/widget/compass/multi-auto.svg)](https://hosted.weblate.org/engage/compass/)
 
 ## License
 
-The project is licensed under the GNU GPL v3.
-You can find the license text in the [LICENSE](LICENSE) file.
+This project is licensed under the GNU GPL v3.
+See the [LICENSE](LICENSE) file for the full license text.

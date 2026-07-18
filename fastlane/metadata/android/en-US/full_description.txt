@@ -1,5 +1,5 @@
 You’ll get exactly what you expect.
-A simple and beautiful compass.
+A simple and clean compass.
 
 Features:
 * Can point to magnetic north as well as true north
@@ -9,6 +9,6 @@ Features:
 * Light and Dark theme
 * No advertisements
 * No trackers
-* No annoyance
+* No unnecessary permissions
 
 Have fun!

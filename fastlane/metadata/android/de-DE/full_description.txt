@@ -1,5 +1,5 @@
 Du bekommst genau das was du erwartest.
-Einen einfachen und schönen Kompass.
+Einen einfachen und übersichtlichen Kompass.
 
 Inhalt:
 * Kann sowohl zum magnetischen Nordpol als auch zum geografischen Nordpol zeigen
@@ -9,6 +9,6 @@ Inhalt:
 * Light und Dark Theme
 * Keine Werbung
 * Keine Tracker
-* Keine Belästigung
+* Keine unnötigen Berechtigungen
 
 Viel Spaß!
