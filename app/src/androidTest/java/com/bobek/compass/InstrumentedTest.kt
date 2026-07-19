@@ -19,8 +19,10 @@
 package com.bobek.compass
 
 import androidx.annotation.StringRes
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.performClick
+import androidx.test.espresso.Espresso.pressBack
 import androidx.test.filters.LargeTest
 import com.bobek.compass.data.SensorAccuracy
 import org.junit.Before
@@ -32,6 +34,12 @@ class InstrumentedTest : AbstractAndroidTest() {
     @Before
     fun setup() {
         waitUntilCompassIsDisplayed()
+    }
+
+    @Test
+    fun initialState() {
+        onTopBarTitle().assertIsDisplayed()
+        onSettingsButton().assertIsDisplayed()
     }
 
     @Test
@@ -61,6 +69,66 @@ class InstrumentedTest : AbstractAndroidTest() {
 
         setAccuracy(SensorAccuracy.HIGH)
         assertSensorAccuracyText(R.string.sensor_accuracy_high)
+    }
+
+
+    @Test
+    fun navigatingToSettingsAndBackShowsCompassScreenAgain() {
+        onSettingsButton().performClick()
+        composeTestRule.waitForIdle()
+        onTopBarTitle(R.string.settings).assertIsDisplayed()
+
+        pressBack()
+        composeTestRule.waitForIdle()
+        onTopBarTitle().assertIsDisplayed()
+    }
+
+    @Test
+    fun changingNightModeUpdatesSelectedTheme() {
+        openSettings()
+
+        onNightModeOption(R.string.night_mode_follow_system).assertIsDisplayed()
+
+        selectNightMode(R.string.night_mode_yes)
+        onNightModeOption(R.string.night_mode_yes).assertIsDisplayed()
+
+        selectNightMode(R.string.night_mode_follow_system)
+        onNightModeOption(R.string.night_mode_follow_system).assertIsDisplayed()
+    }
+
+    @Test
+    fun navigatingToLicenseShowsGplLicenseTextAndBackReturnsToSettings() {
+        openSettings()
+
+        onLicenseListItem().performClick()
+        composeTestRule.waitForIdle()
+
+        onTopBarTitle(R.string.license_name).assertIsDisplayed()
+        waitUntilTextExists("GNU GENERAL PUBLIC LICENSE")
+
+        pressBack()
+        composeTestRule.waitForIdle()
+        onTopBarTitle(R.string.settings).assertIsDisplayed()
+    }
+
+    @Test
+    fun navigatingToThirdPartyLicenseShowsApacheLicenseForMaterialSymbols() {
+        openSettings()
+
+        onThirdPartyLicensesListItem().performClick()
+        composeTestRule.waitForIdle()
+        onTopBarTitle(R.string.third_party_licenses).assertIsDisplayed()
+
+        scrollToListItem("Material Symbols")
+        onListItem("Material Symbols").performClick()
+        composeTestRule.waitForIdle()
+
+        onTopBarTitle("Material Symbols").assertIsDisplayed()
+        waitUntilTextExists("Apache License")
+
+        pressBack()
+        composeTestRule.waitForIdle()
+        onTopBarTitle(R.string.third_party_licenses).assertIsDisplayed()
     }
 
     private fun assertSensorAccuracyText(@StringRes resourceId: Int) {

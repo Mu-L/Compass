@@ -20,12 +20,20 @@ package com.bobek.compass
 
 import android.Manifest
 import android.content.Intent
+import androidx.annotation.StringRes
+import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.assert
+import androidx.compose.ui.test.hasScrollToNodeAction
 import androidx.compose.ui.test.hasStateDescription
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.junit4.AndroidComposeTestRule
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollToNode
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -38,6 +46,7 @@ import org.junit.runner.RunWith
 import androidx.compose.ui.test.junit4.v2.AndroidComposeTestRule as createAndroidComposeTestRule
 
 @RunWith(AndroidJUnit4::class)
+@OptIn(ExperimentalTestApi::class)
 abstract class AbstractAndroidTest {
 
     @get:Rule
@@ -64,6 +73,29 @@ abstract class AbstractAndroidTest {
         composeTestRule.waitUntil(timeoutMillis = 15_000L) { onCompassRose().isDisplayed() }
         composeTestRule.waitForIdle()
     }
+
+    protected fun openSettings() {
+        composeTestRule.waitForIdle()
+        onSettingsButton().performClick()
+        composeTestRule.waitForIdle()
+    }
+
+    protected fun selectNightMode(@StringRes labelResId: Int) {
+        composeTestRule.waitForIdle()
+        onNightModeListItem().performClick()
+        composeTestRule.waitForIdle()
+        onNightModeOption(labelResId).performClick()
+        composeTestRule.waitForIdle()
+    }
+
+    protected fun onTopBarTitle(@StringRes titleResId: Int = R.string.compass): SemanticsNodeInteraction =
+        onTopBarTitle(getString(titleResId))
+
+    protected fun onTopBarTitle(title: String): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithText(title)
+
+    protected fun onSettingsButton(): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithContentDescription(getString(R.string.settings))
 
     protected fun setAzimuth(degrees: Float) {
         composeTestRule.runOnUiThread {
@@ -105,4 +137,29 @@ abstract class AbstractAndroidTest {
 
     protected fun onSensorAccuracyText(): SemanticsNodeInteraction =
         composeTestRule.onNodeWithTag(TestConstants.SENSOR_ACCURACY_TEXT)
+
+    protected fun onLicenseListItem(): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithText(getString(R.string.license))
+
+    protected fun onThirdPartyLicensesListItem(): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithText(getString(R.string.third_party_licenses))
+
+    protected fun onNightModeListItem(): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithText(getString(R.string.night_mode))
+
+    protected fun onNightModeOption(@StringRes labelResId: Int): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithText(getString(labelResId))
+
+    protected fun onListItem(text: String): SemanticsNodeInteraction =
+        composeTestRule.onNodeWithText(text)
+
+    protected fun scrollToListItem(text: String) {
+        composeTestRule.onNode(hasScrollToNodeAction()).performScrollToNode(hasText(text))
+    }
+
+    protected fun waitUntilTextExists(text: String, timeoutMillis: Long = 5_000) {
+        composeTestRule.waitUntilAtLeastOneExists(hasText(text, substring = true), timeoutMillis = timeoutMillis)
+    }
+
+    protected fun getString(@StringRes resId: Int): String = composeTestRule.activity.getString(resId)
 }
