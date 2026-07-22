@@ -18,21 +18,30 @@
 
 package com.bobek.compass.screengrab
 
+import androidx.compose.ui.test.junit4.v2.createComposeRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.platform.app.InstrumentationRegistry
-import com.bobek.compass.AbstractAndroidTest
+import com.bobek.compass.data.Azimuth
 import com.bobek.compass.data.SensorAccuracy
+import com.bobek.compass.ui.MainContent
+import com.bobek.compass.ui.compass.ComposeCompassViewModel
 import org.junit.AfterClass
 import org.junit.BeforeClass
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 import tools.fastlane.screengrab.Screengrab
 import tools.fastlane.screengrab.UiAutomatorScreenshotStrategy
 import tools.fastlane.screengrab.cleanstatusbar.CleanStatusBar
 import tools.fastlane.screengrab.locale.LocaleTestRule
 
 @LargeTest
-class ScreengrabTest : AbstractAndroidTest() {
+@RunWith(AndroidJUnit4::class)
+class ScreengrabTest {
+
+    @get:Rule
+    val composeTestRule = createComposeRule()
 
     @Rule
     @JvmField
@@ -45,12 +54,15 @@ class ScreengrabTest : AbstractAndroidTest() {
 
         Screengrab.setDefaultScreenshotStrategy(UiAutomatorScreenshotStrategy())
 
-        setAzimuth(320.0f)
-        setAccuracy(SensorAccuracy.HIGH)
-        setTrueNorth(false)
-        setScreenOrientationLocked(false)
-
-        waitUntilCompassIsDisplayed()
+        composeTestRule.setContent {
+            MainContent(
+                compassViewModel = ComposeCompassViewModel(
+                    azimuth = Azimuth(320.0f),
+                    sensorAccuracy = SensorAccuracy.HIGH,
+                    screenOrientationLocked = false
+                )
+            )
+        }
         composeTestRule.waitForIdle()
 
         Screengrab.screenshot(screenshotName)
