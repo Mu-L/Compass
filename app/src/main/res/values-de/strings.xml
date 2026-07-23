@@ -3,7 +3,8 @@
     <string name="compass">Kompass</string>
     <string name="sensor_status">Sensor Status</string>
     <string name="lock_screen_rotation">Bildschirmausrichtung sperren</string>
-    <string name="compass_rose_image_description">Windrose die nach Norden zeigt</string>
+    <string name="compass_rose_image_description">Windrose</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Norden</string>
     <string name="cardinal_direction_northeast">Nordost</string>
     <string name="cardinal_direction_east">Osten</string>

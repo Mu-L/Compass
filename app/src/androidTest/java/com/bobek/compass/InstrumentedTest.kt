@@ -91,10 +91,10 @@ class InstrumentedTest {
     @Test
     fun compass() {
         setAzimuth(0f)
-        onCompassRose().assertStateDescription("0°")
+        onCompassRose().assertStateDescription("North, 0°")
 
         setAzimuth(180f)
-        onCompassRose().assertStateDescription("180°")
+        onCompassRose().assertStateDescription("South, 180°")
     }
 
     @Test

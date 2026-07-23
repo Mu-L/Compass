@@ -78,7 +78,7 @@ fun CompassRose(
                 .testTag(TestConstants.COMPASS_ROSE)
                 .semantics {
                     contentDescription = drawData.description
-                    stateDescription = drawData.azimuthText
+                    stateDescription = drawData.stateDescription
                 }
         ) {
             val metrics = CompassMetrics(
@@ -154,6 +154,7 @@ private fun rememberCompassDrawData(azimuth: Azimuth): CompassDrawData {
     val azimuthText = stringResource(R.string.degrees, azimuth.roundedDegrees)
     val cardinalDirectionText = stringResource(azimuth.cardinalDirection.labelResourceId)
     val description = stringResource(R.string.compass_rose_image_description)
+    val stateDescription = stringResource(R.string.compass_rose_state_description, cardinalDirectionText, azimuthText)
 
     return CompassDrawData(
         textMeasurer = textMeasurer,
@@ -169,7 +170,8 @@ private fun rememberCompassDrawData(azimuth: Azimuth): CompassDrawData {
         westAbbreviation = westAbbreviation,
         azimuthText = azimuthText,
         cardinalDirectionText = cardinalDirectionText,
-        description = description
+        description = description,
+        stateDescription = stateDescription
     )
 }
 
@@ -352,7 +354,8 @@ private class CompassDrawData(
     val westAbbreviation: String,
     val azimuthText: String,
     val cardinalDirectionText: String,
-    val description: String
+    val description: String,
+    val stateDescription: String
 )
 
 private data class CompassMetrics(val canvasSize: Float, val center: Offset) {
