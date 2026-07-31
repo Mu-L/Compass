@@ -36,12 +36,6 @@ height="80">](https://github.com/Kr0oked/Compass/releases/latest)
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="Screenshot Light theme" height="500"/>
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" alt="Screenshot Dark theme" height="500"/>
 
-## Translations
-
-Help translate the app into your language on [Weblate](https://hosted.weblate.org/engage/compass/).
-
-[![Translation status](https://hosted.weblate.org/widget/compass/multi-auto.svg)](https://hosted.weblate.org/engage/compass/)
-
 ## License
 
 This project is licensed under the GNU GPL v3.
