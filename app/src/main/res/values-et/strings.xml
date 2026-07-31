@@ -1,55 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Kompass</string>
-    <string name="cardinal_direction_northwest">Loe</string>
-    <string name="cardinal_direction_north_abbreviation">N</string>
-    <string name="cardinal_direction_south_abbreviation">S</string>
-    <string name="source_code">Lähtekood</string>
-    <string name="error">Viga</string>
-    <string name="no_thanks">Tänan, ei</string>
+    <string name="sensor_status">Anduri olek</string>
+    <string name="lock_screen_rotation">Lukusta ekraani pööramine</string>
+    <string name="compass_rose_image_description">Tuulteroos</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
+    <string name="cardinal_direction_north">Põhi</string>
     <string name="cardinal_direction_northeast">Kirre</string>
-    <string name="third_party_licenses_summary">Kaasatud avatud lähtekoodiga teekide litsentsid</string>
     <string name="cardinal_direction_east">Ida</string>
     <string name="cardinal_direction_southeast">Kagu</string>
-    <string name="cardinal_direction_west_abbreviation">W</string>
-    <string name="version">Versioon</string>
-    <string name="error_message">Tekkis viga.\nVeateade: %1$s\nVeakood: %2$s</string>
-    <string name="ok">Sobib</string>
-    <string name="cardinal_direction_north">Põhi</string>
-    <string name="cardinal_direction_southwest">Edel</string>
     <string name="cardinal_direction_south">Lõuna</string>
+    <string name="cardinal_direction_southwest">Edel</string>
     <string name="cardinal_direction_west">Lääs</string>
+    <string name="cardinal_direction_northwest">Loe</string>
+    <string name="cardinal_direction_north_abbreviation">N</string>
     <string name="cardinal_direction_east_abbreviation">E</string>
-    <string name="settings">Seadistused</string>
-    <string name="third_party_licenses">Kolmandate osapoolte litsentsid</string>
-    <string name="display">Ekraan</string>
-    <string name="access_location_permission_rationale_title">Sinu asukoha tuvastamiseks me vajame õigusi</string>
-    <string name="about">Rakenduse teave</string>
-    <string name="night_mode_follow_system">Järgi süsteemi kujundust</string>
-    <string name="compass_rose_image_description">Tuulteroos osutab põhja</string>
-    <string name="night_mode_yes">Tume kujundus</string>
-    <string name="night_mode">Kujundus</string>
-    <string name="access_location_permission_denied">Asukoha tuvastamiseks puuduvad õigused. Jätkame suuna näitamist magnetilise põhjasuuna alusel.</string>
-    <string name="lock_screen_rotation">Lukusta ekraani paigutus</string>
-    <string name="location_error_message">Asukoht pole teada</string>
-    <string name="sensor_accuracy_medium">Keskmine täpsus</string>
-    <string name="night_mode_no">Hele kujundus</string>
-    <string name="sensor_error_message">Andur puudub või pole saadaval</string>
-    <string name="sensor_accuracy_high">Parim võimalik täpsus</string>
-    <string name="sensor_status">Anduri olek</string>
-    <string name="sensor_accuracy_no_contact">Andur puudub või pole saadaval</string>
-    <string name="sensor_accuracy_unreliable">Anduri väärtused pole usaldusväärsed</string>
+    <string name="cardinal_direction_south_abbreviation">S</string>
+    <string name="cardinal_direction_west_abbreviation">W</string>
+    <string name="sensor_accuracy_no_contact">Kontakt puudub</string>
+    <string name="sensor_accuracy_unreliable">Ebausaldusväärne</string>
     <string name="sensor_accuracy_low">Madal täpsus</string>
-    <string name="location_not_present">Asukoha tuvastamine ei õnnestunud. Jätkame suuna näitamist magnetilise põhjasuuna alusel.</string>
+    <string name="sensor_accuracy_medium">Keskmine täpsus</string>
+    <string name="sensor_accuracy_high">Kõrge täpsus</string>
+    <string name="sensor_error_message">Andur puudub või pole saadaval</string>
+    <string name="sensor_calibration_text">Anduri täpsuse parandamiseks liiguta seadet kaheksakujuliselt.</string>
+    <string name="location_loading">Asukoha ootamine…</string>
+    <string name="location_error_message">Asukoht ei ole saadaval</string>
+    <string name="location_not_present">Asukoht pole saadaval. Näidatakse magnetilist põhjasuunda.</string>
     <string name="location_reload">Tuvasta asukoht uuesti</string>
-    <string name="access_location_permission_rationale_message">Geograafilise põhjasuuna näitamiseks peab see rakendus sinu praeguse asukoha alusel tuvastama magnetiline deklinatsiooni.</string>
+    <string name="access_location_permission_rationale_title">Vajame juurdepääsu asukohale</string>
+    <string name="access_location_permission_rationale_message">Geograafilise põhjasuuna näitamiseks vajab rakendus sinu asukohta, et arvutada magnetiline deklinatsioon.</string>
+    <string name="access_location_permission_denied">Asukoha luba puudub. Näidatakse magnetilist põhjasuunda.</string>
+    <string name="settings">Seadistused</string>
     <string name="true_north">Geograafiline põhjasuund</string>
-    <string name="true_north_summary">Tee korrektsioon magnetilise deklinatsiooni alusel ja näita geograafilist põhjasuunda. Eeldab õigust sinu asukoha tuvastamiseks.</string>
+    <string name="true_north_summary">Korrigeerib magnetilist deklinatsiooni, kasutades sinu asukohta.</string>
     <string name="magnetic_north">Magnetiline põhjasuund</string>
     <string name="haptic_feedback">Haptiline tagasiside</string>
+    <string name="haptic_feedback_summary">Suuna muutumisel kompass vibreerib.</string>
+    <string name="display">Ekraan</string>
+    <string name="night_mode">Kujundus</string>
+    <string name="night_mode_follow_system">Järgi süsteemi kujundust</string>
+    <string name="night_mode_no">Hele kujundus</string>
+    <string name="night_mode_yes">Tume kujundus</string>
+    <string name="about">Rakenduse teave</string>
     <string name="author">Autor</string>
     <string name="license">Litsents</string>
-    <string name="haptic_feedback_summary">Suuna muutumisel kompass vibreerib.</string>
-    <string name="sensor_calibration_text">Sa võid alati parandada anduri täpsust liigutades oma nutiseadet 8-laadse mustri järgi.</string>
-    <string name="location_loading">Ootame asukoha tuvastamist</string>
+    <string name="third_party_licenses">Kolmandate osapoolte litsentsid</string>
+    <string name="third_party_licenses_summary">Kaasatud avatud lähtekoodiga teekide litsentsid</string>
+    <string name="source_code">Lähtekood</string>
+    <string name="version">Versioon</string>
+    <string name="error_message">Tekkis viga.\nVeateade: %1$s\nVeakood: %2$s</string>
+    <string name="error">Viga</string>
+    <string name="ok">Sobib</string>
+    <string name="no_thanks">Tänan, ei</string>
 </resources>

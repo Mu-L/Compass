@@ -1,13 +1,14 @@
 Bạn sẽ nhận được chính xác những gì bạn mong đợi.
-Một la bàn đơn giản và đẹp.
+Một la bàn đơn giản và gọn gàng.
 
-Đặc trưng:
-* Có thể chỉ về hướng bắc từ cũng như hướng bắc thực
-* Hiển thị độ chính xác và hướng hồng y
+Tính năng:
+* Có thể chỉ hướng bắc từ và hướng bắc thực
+* Hiển thị chính xác số độ và hướng la bàn
 * Hiển thị trạng thái cảm biến
-* Phản hồi xúc giác
-* Chế độ ban đêm tự động
-* Không có quảng cáo
-* Không khó chịu
+* Phản hồi rung
+* Giao diện sáng và tối
+* Không quảng cáo
+* Không theo dõi
+* Không có quyền truy cập không cần thiết
 
-Chúc vui vẻ!
+Chúc bạn vui vẻ!

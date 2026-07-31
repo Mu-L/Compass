@@ -1,5 +1,5 @@
-Você obterá exatamente o que espera.
-Uma bússola simples e bonita.
+Você vai conseguir exatamente o que espera.
+Uma bússola simples e clara.
 
 Características:
 * Pode apontar para o norte magnético e também para o norte verdadeiro
@@ -9,6 +9,6 @@ Características:
 * Tema claro e escuro
 * Sem anúncios
 * Sem rastreadores
-* Sem aborrecimento
+* Sem permissões desnecessárias
 
 Divirta-se!

@@ -1,8 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Kompas</string>
-    <string name="sensor_status">Keadaan Pengesan</string>
-    <string name="lock_screen_rotation">Kunci Pusingan Paparan</string>
-    <string name="compass_rose_image_description">Penunjuk kompas sedang menuju ke utara</string>
+    <string name="sensor_status">Status penderia</string>
+    <string name="lock_screen_rotation">Kunci putaran skrin</string>
+    <string name="compass_rose_image_description">Ros kompas</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Utara</string>
+    <string name="cardinal_direction_northeast">Timur laut</string>
+    <string name="cardinal_direction_east">Timur</string>
+    <string name="cardinal_direction_southeast">Tenggara</string>
+    <string name="cardinal_direction_south">Selatan</string>
+    <string name="cardinal_direction_southwest">Barat daya</string>
+    <string name="cardinal_direction_west">Barat</string>
+    <string name="cardinal_direction_northwest">Barat laut</string>
+    <string name="cardinal_direction_north_abbreviation">U</string>
+    <string name="cardinal_direction_east_abbreviation">T</string>
+    <string name="cardinal_direction_south_abbreviation">S</string>
+    <string name="cardinal_direction_west_abbreviation">B</string>
+    <string name="sensor_accuracy_no_contact">Tiada sentuhan</string>
+    <string name="sensor_accuracy_unreliable">Tidak boleh dipercayai</string>
+    <string name="sensor_accuracy_low">Ketepatan rendah</string>
+    <string name="sensor_accuracy_medium">Ketepatan sederhana</string>
+    <string name="sensor_accuracy_high">Ketepatan tinggi</string>
+    <string name="sensor_error_message">Penderia tidak tersedia</string>
+    <string name="sensor_calibration_text">Putarkan peranti anda dalam gerakan berbentuk lapan untuk meningkatkan ketepatan penderia.</string>
+    <string name="location_loading">Menunggu lokasi…</string>
+    <string name="location_error_message">Lokasi tidak tersedia</string>
+    <string name="location_not_present">Lokasi tidak tersedia. Menunjukkan utara magnet sebagai gantinya.</string>
+    <string name="location_reload">Muat semula lokasi</string>
+    <string name="access_location_permission_rationale_title">Akses lokasi diperlukan</string>
+    <string name="access_location_permission_rationale_message">Untuk menunjukkan utara sebenar, aplikasi ini memerlukan lokasi anda untuk mengira sudut pesongan magnet.</string>
+    <string name="access_location_permission_denied">Kebenaran lokasi ditolak. Menunjukkan utara magnet sebagai gantinya.</string>
+    <string name="settings">Tetapan</string>
+    <string name="true_north">Utara sebenar</string>
+    <string name="true_north_summary">Membetulkan sudut pesongan magnet menggunakan lokasi anda.</string>
+    <string name="magnetic_north">Utara magnet</string>
+    <string name="haptic_feedback">Maklum balas haptik</string>
+    <string name="haptic_feedback_summary">Bergetar apabila arah berubah.</string>
+    <string name="display">Paparan</string>
+    <string name="night_mode">Tema</string>
+    <string name="night_mode_follow_system">Ikut sistem</string>
+    <string name="night_mode_no">Cerah</string>
+    <string name="night_mode_yes">Gelap</string>
+    <string name="about">Perihal</string>
+    <string name="author">Pengarang</string>
+    <string name="license">Lesen</string>
+    <string name="third_party_licenses">Lesen pihak ketiga</string>
+    <string name="third_party_licenses_summary">Lesen pustaka sumber terbuka yang digunakan dalam aplikasi ini.</string>
+    <string name="source_code">Kod sumber</string>
+    <string name="version">Versi</string>
+    <string name="error_message">Ralat berlaku.\nMesej: %1$s\nButiran: %2$s</string>
+    <string name="error">Ralat</string>
+    <string name="ok">OK</string>
+    <string name="no_thanks">Tidak, terima kasih</string>
 </resources>

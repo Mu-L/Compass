@@ -1,15 +1,14 @@
-Tu obtiens exactement ce que tu attends.
-Une boussole simple et belle.
+Vous obtiendrez exactement ce que vous attendez.
+Une boussole simple et épurée.
 
-Contenu :
-* Peut pointer aussi bien vers le pôle nord magnétique que vers le pôle
-nord géographique.
+Fonctionnalités :
+* Peut indiquer le nord magnétique ainsi que le nord géographique
 * Affiche les degrés exacts et la direction cardinale
-* Indique l'état du capteur
+* Affiche l'état du capteur
 * Retour haptique
-* Thème Sombre et Clair
-* Pas de publicité
-* Pas de traqueurs
-* Pas de harcèlement
+* Thème clair et sombre
+* Aucune publicité
+* Aucun traqueur
+* Aucune permission inutile
 
 Amusez-vous bien !

@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Iránytű</string>
     <string name="sensor_status">Érzékelő állapota</string>
     <string name="lock_screen_rotation">Automatikus elforgatás zárolása</string>
-    <string name="compass_rose_image_description">Az iránytű észak felé mutat</string>
+    <string name="compass_rose_image_description">Iránytű rózsa</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Észak</string>
     <string name="cardinal_direction_northeast">Északkelet</string>
     <string name="cardinal_direction_east">Kelet</string>
@@ -20,7 +40,7 @@
     <string name="sensor_accuracy_unreliable">Az érzékelő értékei megbízhatatlanok</string>
     <string name="sensor_accuracy_low">Alacsony pontosság</string>
     <string name="sensor_accuracy_medium">Átlagos pontosság</string>
-    <string name="sensor_accuracy_high">Legnagyobb pontosság</string>
+    <string name="sensor_accuracy_high">Nagy pontosság</string>
     <string name="sensor_error_message">Az érzékelő nem elérhető</string>
     <string name="sensor_calibration_text">Az érzékelő pontosságát bármikor megpróbálhatja javítani a készülék 8-as alakban történő forgatásával.</string>
     <string name="location_loading">Várakozás a helyadatok frissítésére</string>
@@ -32,21 +52,23 @@
     <string name="access_location_permission_denied">Hiányzik a tartózkodási hely eléréséhez szükséges engedély. A mágneses észak használata.</string>
     <string name="settings">Beállítások</string>
     <string name="true_north">Valódi észak</string>
-    <string name="true_north_summary">A mágneses deklináció javítása és a valódi észak mutatása. Hozzáférés szükséges a tartózkodási helyhez.</string>
+    <string name="true_north_summary">Korrigálja a mágneses deklinációt a tartózkodási helye alapján.</string>
     <string name="magnetic_north">Mágneses észak</string>
     <string name="haptic_feedback">Haptikus visszajelzés</string>
     <string name="haptic_feedback_summary">Az iránytű rezeg, amikor az irány megváltozik.</string>
     <string name="display">Megjelenés</string>
     <string name="night_mode">Téma</string>
-    <string name="night_mode_follow_system">Rendszer alapértlmezett</string>
+    <string name="night_mode_follow_system">Rendszer követése</string>
     <string name="night_mode_no">Világos</string>
     <string name="night_mode_yes">Sötét</string>
     <string name="about">Névjegy</string>
     <string name="author">Fejlesztő</string>
     <string name="license">Licenc</string>
+    <string name="third_party_licenses">Harmadik féltől származó licencek</string>
+    <string name="third_party_licenses_summary">Az alkalmazásban használt nyílt forráskódú könyvtárak licencei.</string>
     <string name="source_code">Forráskód</string>
     <string name="version">Verzió</string>
-    <string name="error_message">Hiba történt.\nÜzenet: %1$s\nHibakód: %2$s</string>
+    <string name="error_message">Hiba történt.\nÜzenet: %1$s\nRészletek: %2$s</string>
     <string name="error">Hiba</string>
     <string name="ok">OK</string>
     <string name="no_thanks">Nem, köszönöm</string>

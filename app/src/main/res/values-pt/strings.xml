@@ -1,55 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Bússola</string>
     <string name="sensor_status">Estado do sensor</string>
-    <string name="lock_screen_rotation">Rotação do ecrã de bloqueio</string>
-    <string name="compass_rose_image_description">Bússola apontando para o norte</string>
+    <string name="lock_screen_rotation">Bloquear rotação do ecrã</string>
+    <string name="compass_rose_image_description">Rosa dos ventos</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Norte</string>
     <string name="cardinal_direction_northeast">Nordeste</string>
-    <string name="cardinal_direction_east">Leste</string>
+    <string name="cardinal_direction_east">Este</string>
     <string name="cardinal_direction_southeast">Sudeste</string>
     <string name="cardinal_direction_south">Sul</string>
     <string name="cardinal_direction_southwest">Sudoeste</string>
     <string name="cardinal_direction_west">Oeste</string>
     <string name="cardinal_direction_northwest">Noroeste</string>
     <string name="cardinal_direction_north_abbreviation">N</string>
-    <string name="cardinal_direction_east_abbreviation">L</string>
+    <string name="cardinal_direction_east_abbreviation">E</string>
     <string name="cardinal_direction_south_abbreviation">S</string>
     <string name="cardinal_direction_west_abbreviation">O</string>
-    <string name="sensor_accuracy_no_contact">Sensor não disponível</string>
-    <string name="sensor_accuracy_unreliable">Os valores do sensor não são confiáveis</string>
+    <string name="sensor_accuracy_no_contact">Sem contacto</string>
+    <string name="sensor_accuracy_unreliable">Não fiável</string>
     <string name="sensor_accuracy_low">Baixa precisão</string>
-    <string name="sensor_accuracy_medium">Média precisão</string>
-    <string name="sensor_accuracy_high">Máxima precisão</string>
+    <string name="sensor_accuracy_medium">Precisão média</string>
+    <string name="sensor_accuracy_high">Precisão elevada</string>
     <string name="sensor_error_message">Sensor não disponível</string>
-    <string name="sensor_calibration_text">Pode tentar melhorar a precisão do sensor a qualquer momento girando o dispositivo num padrão de movimento em 8.</string>
-    <string name="location_loading">A aguardar a atualização de localização</string>
-    <string name="location_not_present">A localização não pôde ser determinada. Voltando ao norte magnético.</string>
+    <string name="sensor_calibration_text">Rode o dispositivo num movimento em forma de oito para melhorar a precisão do sensor.</string>
+    <string name="location_loading">A aguardar localização…</string>
+    <string name="location_error_message">Localização não disponível</string>
+    <string name="location_not_present">Localização indisponível. A mostrar o norte magnético em alternativa.</string>
     <string name="location_reload">Recarregar localização</string>
-    <string name="access_location_permission_rationale_title">Precisamos de permissão para aceder a sua localização</string>
-    <string name="access_location_permission_rationale_message">Para mostrar o norte verdadeiro, esta app precisa determinar a declinação magnética com base na sua localização atual.</string>
-    <string name="access_location_permission_denied">Sem permissão para aceder a sua localização atual. Alterando para o norte magnético.</string>
-    <string name="settings">Configurações</string>
+    <string name="access_location_permission_rationale_title">É necessário aceder à localização</string>
+    <string name="access_location_permission_rationale_message">Para apontar para o norte verdadeiro, esta app precisa da sua localização para calcular a declinação magnética.</string>
+    <string name="access_location_permission_denied">Permissão de localização negada. A mostrar o norte magnético em alternativa.</string>
+    <string name="settings">Definições</string>
     <string name="true_north">Norte verdadeiro</string>
-    <string name="true_north_summary">Corrigir a declinação magnética e mostre o norte verdadeiro. É necessário acesso à sua localização.</string>
+    <string name="true_north_summary">Corrige a declinação magnética com base na sua localização.</string>
     <string name="magnetic_north">Norte magnético</string>
     <string name="haptic_feedback">Feedback tátil</string>
     <string name="haptic_feedback_summary">A bússola vibra quando a direção muda.</string>
     <string name="display">Ecrã</string>
     <string name="night_mode">Tema</string>
-    <string name="night_mode_follow_system">De acordo com o sistema</string>
+    <string name="night_mode_follow_system">Seguir o sistema</string>
     <string name="night_mode_no">Claro</string>
     <string name="night_mode_yes">Escuro</string>
     <string name="about">Sobre</string>
     <string name="author">Autor</string>
     <string name="license">Licença</string>
+    <string name="third_party_licenses">Licenças de terceiros</string>
+    <string name="third_party_licenses_summary">Licenças das bibliotecas de código aberto utilizadas nesta app.</string>
     <string name="source_code">Código-fonte</string>
     <string name="version">Versão</string>
-    <string name="error_message">Ocorreu um erro.\nMensagem: %1$s\nCode: %2$s</string>
+    <string name="error_message">Ocorreu um erro.\nMensagem: %1$s\nDetalhes: %2$s</string>
     <string name="error">Erro</string>
     <string name="ok">OK</string>
     <string name="no_thanks">Não, obrigado</string>
-    <string name="location_error_message">Localização não disponível</string>
-    <string name="third_party_licenses">Licenças de terceiros</string>
-    <string name="third_party_licenses_summary">Licenças de bibliotecas de código aberto incluídas</string>
 </resources>

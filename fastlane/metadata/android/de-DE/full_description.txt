@@ -1,12 +1,12 @@
-Du bekommst genau das was du erwartest.
+Du bekommst genau das, was du erwartest.
 Einen einfachen und übersichtlichen Kompass.
 
-Inhalt:
-* Kann sowohl zum magnetischen Nordpol als auch zum geografischen Nordpol zeigen
+Funktionen:
+* Kann sowohl zum magnetischen als auch zum geografischen Norden zeigen
 * Zeigt die exakte Gradzahl und Himmelsrichtung an
-* Zeigt den Sensor Status an
+* Zeigt den Sensorstatus an
 * Haptisches Feedback
-* Light und Dark Theme
+* Helles und dunkles Design
 * Keine Werbung
 * Keine Tracker
 * Keine unnötigen Berechtigungen

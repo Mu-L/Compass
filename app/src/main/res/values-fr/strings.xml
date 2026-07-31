@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Boussole</string>
     <string name="sensor_status">État du capteur</string>
     <string name="lock_screen_rotation">Bloquer la rotation de l\'écran</string>
-    <string name="compass_rose_image_description">Rose des vents indiquant le nord</string>
+    <string name="compass_rose_image_description">Rose des vents</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Nord</string>
     <string name="cardinal_direction_northeast">Nord-Est</string>
     <string name="cardinal_direction_east">Est</string>
@@ -16,23 +36,23 @@
     <string name="cardinal_direction_east_abbreviation">E</string>
     <string name="cardinal_direction_south_abbreviation">S</string>
     <string name="cardinal_direction_west_abbreviation">O</string>
-    <string name="sensor_accuracy_no_contact">Capteur non disponible</string>
-    <string name="sensor_accuracy_unreliable">Valeurs des capteurs non fiables</string>
+    <string name="sensor_accuracy_no_contact">Aucun contact</string>
+    <string name="sensor_accuracy_unreliable">Non fiable</string>
     <string name="sensor_accuracy_low">Précision faible</string>
     <string name="sensor_accuracy_medium">Précision moyenne</string>
-    <string name="sensor_accuracy_high">Précision maximale</string>
+    <string name="sensor_accuracy_high">Précision élevée</string>
     <string name="sensor_error_message">Capteur non disponible</string>
-    <string name="sensor_calibration_text">Vous pouvez améliorer la précision de votre capteur à n\'importe quel moment en tournant l\'appareil en faisant un 8.</string>
-    <string name="location_loading">En attente d\'une mise à jour de la position</string>
+    <string name="sensor_calibration_text">Faites pivoter votre appareil en un mouvement en forme de 8 pour améliorer la précision du capteur.</string>
+    <string name="location_loading">En attente de la position…</string>
     <string name="location_error_message">Position non disponible</string>
-    <string name="location_not_present">La position n\'a pas pu être déterminé. Retour vers le nord magnétique.</string>
-    <string name="location_reload">Mise à jour de la position</string>
-    <string name="access_location_permission_rationale_title">Nous avons besoin d\'une autorisation pour accéder à votre localisposition</string>
-    <string name="access_location_permission_rationale_message">Pour indiquer le nord géographique, cette application doit déterminer la déclinaison magnétique en fonction de votre position actuelle.</string>
-    <string name="access_location_permission_denied">Absence d\'autorisation d\'accès à la position. Retomber au nord magnétique.</string>
+    <string name="location_not_present">Position indisponible. Affichage du nord magnétique à la place.</string>
+    <string name="location_reload">Actualiser la position</string>
+    <string name="access_location_permission_rationale_title">Accès à la position nécessaire</string>
+    <string name="access_location_permission_rationale_message">Pour indiquer le nord géographique, cette application a besoin de votre position afin de calculer la déclinaison magnétique.</string>
+    <string name="access_location_permission_denied">Autorisation de localisation refusée. Affichage du nord magnétique à la place.</string>
     <string name="settings">Paramètres</string>
     <string name="true_north">Nord géographique</string>
-    <string name="true_north_summary">Corrigez la déclinaison magnétique et affichez le nord géographique. Nécessite l\'accès à votre position.</string>
+    <string name="true_north_summary">Corrige la déclinaison magnétique à partir de votre position.</string>
     <string name="magnetic_north">Nord magnétique</string>
     <string name="haptic_feedback">Retour haptique</string>
     <string name="haptic_feedback_summary">La boussole vibre lorsque la direction change.</string>
@@ -45,11 +65,11 @@
     <string name="author">Auteur</string>
     <string name="license">Licence</string>
     <string name="third_party_licenses">Licences tierces</string>
-    <string name="third_party_licenses_summary">Licences des bibliothèques libres incluses</string>
+    <string name="third_party_licenses_summary">Licences des bibliothèques open source utilisées dans cette application.</string>
     <string name="source_code">Code source</string>
     <string name="version">Version</string>
-    <string name="error_message">Une erreur s\'est produite.\nMessage: %1$s\nCode: %2$s</string>
-    <string name="error">Ertreur</string>
+    <string name="error_message">Une erreur s\'est produite.\nMessage : %1$s\nDétails : %2$s</string>
+    <string name="error">Erreur</string>
     <string name="ok">OK</string>
     <string name="no_thanks">Non merci</string>
 </resources>

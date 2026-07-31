@@ -1,10 +1,14 @@
-Saat juuri sen, mitä odotat.
-Yksinkertainen ja kaunis kompassi, joka osoittaa magneettiseen pohjoiseen.
+Saat juuri sitä, mitä odotat.
+Yksinkertainen ja selkeä kompassi.
 
 Ominaisuudet:
-* Näyttää asteet ja pääilmansuunnat
+* Osoittaa sekä magneettiseen että maantieteelliseen pohjoiseen
+* Näyttää tarkat asteet ja pääilmansuunnan
 * Näyttää anturin tilan
-* Seuraa laitteen teemaa
+* Haptinen palaute
+* Vaalea ja tumma teema
 * Ei mainoksia
+* Ei seurantaa
+* Ei tarpeettomia käyttöoikeuksia
 
 Pidä hauskaa!

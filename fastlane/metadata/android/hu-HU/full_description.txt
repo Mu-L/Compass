@@ -1,13 +1,14 @@
-Pontosan azt kapja, amire számít.
-Egy egyszerű és szép iránytűt.
+Pontosan azt kapja, amit vár.
+Egy egyszerű és letisztult iránytű.
 
 Funkciók:
-* A mágneses észak vagy a valódi észak irányába is mutathat.
-* Megmutatja a pontos fokokat és a kardinális irányt
+* Mutathat mágneses észak és valódi észak felé is
+* Megjeleníti a pontos fokokat és az égtájat
 * Megjeleníti az érzékelő állapotát
 * Haptikus visszajelzés
-* Automatikus éjszakai üzemmód
-* Nincsenek reklámok
-* Nem bosszantó
+* Világos és sötét téma
+* Nincsenek hirdetések
+* Nincsenek nyomkövetők
+* Nincsenek felesleges engedélyek
 
 Jó szórakozást!

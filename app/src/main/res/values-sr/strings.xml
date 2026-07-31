@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Компас</string>
     <string name="sensor_status">Статус сензора</string>
     <string name="lock_screen_rotation">Закључај ротацију екрана</string>
-    <string name="compass_rose_image_description">Ружа компаса показује према магнетном северу</string>
+    <string name="compass_rose_image_description">Ружа компаса</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Север</string>
     <string name="cardinal_direction_northeast">Североисток</string>
     <string name="cardinal_direction_east">Исток</string>
@@ -16,40 +36,40 @@
     <string name="cardinal_direction_east_abbreviation">И</string>
     <string name="cardinal_direction_south_abbreviation">Ј</string>
     <string name="cardinal_direction_west_abbreviation">З</string>
-    <string name="sensor_accuracy_no_contact">Сензор није доступан</string>
-    <string name="sensor_accuracy_unreliable">Вредности сензора су непоуздане</string>
+    <string name="sensor_accuracy_no_contact">Нема контакта</string>
+    <string name="sensor_accuracy_unreliable">Непоуздано</string>
     <string name="sensor_accuracy_low">Ниска тачност</string>
     <string name="sensor_accuracy_medium">Просечна тачност</string>
-    <string name="sensor_accuracy_high">Максимална тачност</string>
+    <string name="sensor_accuracy_high">Висока тачност</string>
     <string name="sensor_error_message">Сензор није доступан</string>
-    <string name="sensor_calibration_text">Можете покушати да побољшате тачност сензора у било ком тренутку тако што ћете окретати уређај у облику осмице.</string>
-    <string name="about">О апликацији</string>
-    <string name="license">Лиценца</string>
-    <string name="version">Верзија</string>
-    <string name="ok">У реду</string>
-    <string name="location_not_present">Локација није могла бити утврђена. Повратак на магнетни север.</string>
+    <string name="sensor_calibration_text">Окрените уређај у облику осмице да бисте побољшали тачност сензора.</string>
+    <string name="location_loading">Чека се локација…</string>
+    <string name="location_error_message">Локација није доступна</string>
+    <string name="location_not_present">Локација није доступна. Приказује се магнетни север.</string>
     <string name="location_reload">Поново учитај локацију</string>
-    <string name="access_location_permission_denied">Недостаје дозвола за приступ локацији. Повратак на магнетни север.</string>
+    <string name="access_location_permission_rationale_title">Потребна је дозвола за приступ локацији</string>
+    <string name="access_location_permission_rationale_message">За приказ правог севера, ова апликација треба да одреди магнетну деклинацију на основу ваше локације.</string>
+    <string name="access_location_permission_denied">Дозвола за приступ локацији је одбијена. Приказује се магнетни север.</string>
     <string name="settings">Подешавања</string>
+    <string name="true_north">Прави север</string>
+    <string name="true_north_summary">Исправља магнетну деклинацију на основу ваше локације.</string>
+    <string name="magnetic_north">Магнетни север</string>
     <string name="haptic_feedback">Вибрације</string>
-    <string name="true_north_summary">Исправља магнетну деклинацију и приказује прави север. Потребан је приступ вашој локацији.</string>
     <string name="haptic_feedback_summary">Компас вибрира када се смер промени.</string>
     <string name="display">Приказ</string>
     <string name="night_mode">Тема</string>
-    <string name="night_mode_follow_system">Систем</string>
-    <string name="third_party_licenses_summary">Лиценце укључених библиотека отвореног кода</string>
-    <string name="source_code">Изворни код</string>
-    <string name="error_message">Дошло је до грешке.\nПорука: %1$s\nКод: %2$s</string>
-    <string name="error">Грешка</string>
-    <string name="no_thanks">Не хвала</string>
-    <string name="location_loading">Чека се ажурирање локације</string>
-    <string name="location_error_message">Локација није доступна</string>
-    <string name="access_location_permission_rationale_title">Потребна је дозвола за приступ вашој локацији</string>
-    <string name="access_location_permission_rationale_message">За приказ правог севера, ова апликација треба да одреди магнетну деклинацију на основу ваше тренутне локације.</string>
-    <string name="true_north">Прави Север</string>
+    <string name="night_mode_follow_system">Прати систем</string>
     <string name="night_mode_no">Светла</string>
     <string name="night_mode_yes">Тамна</string>
+    <string name="about">О апликацији</string>
     <string name="author">Аутор</string>
+    <string name="license">Лиценца</string>
     <string name="third_party_licenses">Лиценце трећих страна</string>
-    <string name="magnetic_north">Магнетни Север</string>
+    <string name="third_party_licenses_summary">Лиценце библиотека отвореног кода коришћених у овој апликацији.</string>
+    <string name="source_code">Изворни код</string>
+    <string name="version">Верзија</string>
+    <string name="error_message">Дошло је до грешке.\nПорука: %1$s\nДетаљи: %2$s</string>
+    <string name="error">Грешка</string>
+    <string name="ok">У реду</string>
+    <string name="no_thanks">Не хвала</string>
 </resources>

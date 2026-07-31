@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Kompas</string>
     <string name="sensor_status">Status sensora</string>
-    <string name="lock_screen_rotation">Obrót ekranu blokady</string>
-    <string name="compass_rose_image_description">Róża wiatrów wskazuje północ</string>
+    <string name="lock_screen_rotation">Zablokuj obrót ekranu</string>
+    <string name="compass_rose_image_description">Róża wiatrów</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Północ</string>
     <string name="cardinal_direction_northeast">Północny wschód</string>
     <string name="cardinal_direction_east">Wschód</string>
@@ -16,39 +36,39 @@
     <string name="cardinal_direction_east_abbreviation">E</string>
     <string name="cardinal_direction_south_abbreviation">S</string>
     <string name="cardinal_direction_west_abbreviation">W</string>
-    <string name="sensor_accuracy_no_contact">Sensor niedostępny</string>
-    <string name="sensor_accuracy_unreliable">Wartości sensora nie są wiarygodne</string>
+    <string name="sensor_accuracy_no_contact">Brak kontaktu</string>
+    <string name="sensor_accuracy_unreliable">Niewiarygodny</string>
     <string name="sensor_accuracy_low">Niska dokładność</string>
-    <string name="sensor_accuracy_medium">Przeciętna dokładność</string>
-    <string name="sensor_accuracy_high">Maksymalna dokładność</string>
+    <string name="sensor_accuracy_medium">Średnia dokładność</string>
+    <string name="sensor_accuracy_high">Wysoka dokładność</string>
     <string name="sensor_error_message">Sensor niedostępny</string>
-    <string name="sensor_calibration_text">W dowolnym momencie możesz spróbować poprawić dokładność czujnika, obracając urządzenie w sposób przedstawiający cyfrę 8.</string>
-    <string name="location_loading">Oczekiwanie na aktualizację lokalizacji</string>
+    <string name="sensor_calibration_text">Obróć urządzenie ruchem przypominającym cyfrę 8, aby poprawić dokładność czujnika.</string>
+    <string name="location_loading">Oczekiwanie na lokalizację…</string>
     <string name="location_error_message">Lokalizacja niedostępna</string>
-    <string name="location_not_present">Nie udało się ustalić lokalizacji. Powrót na północ magnetyczną.</string>
+    <string name="location_not_present">Lokalizacja niedostępna. Zamiast tego pokazywana jest północ magnetyczna.</string>
     <string name="location_reload">Ponownie załaduj lokalizację</string>
-    <string name="access_location_permission_rationale_title">Potrzebujemy pozwolenia na dostęp do Twojej lokalizacji</string>
-    <string name="access_location_permission_rationale_message">Aby wyświetlić północ geograficzną, aplikacja musi określić deklinację magnetyczną na podstawie Twojej bieżącej lokalizacji.</string>
-    <string name="access_location_permission_denied">Brak pozwolenia na dostęp do lokalizacji. Powrót na północ magnetyczną.</string>
+    <string name="access_location_permission_rationale_title">Wymagany dostęp do lokalizacji</string>
+    <string name="access_location_permission_rationale_message">Aby wskazywać północ geograficzną, aplikacja potrzebuje Twojej lokalizacji do obliczenia deklinacji magnetycznej.</string>
+    <string name="access_location_permission_denied">Odmówiono dostępu do lokalizacji. Zamiast tego pokazywana jest północ magnetyczna.</string>
     <string name="settings">Ustawienia</string>
     <string name="true_north">Północ geograficzna</string>
-    <string name="true_north_summary">Skoryguj deklinację magnetyczną i wskaż północ geograficzną. Wymaga dostępu do Twojej lokalizacji.</string>
+    <string name="true_north_summary">Koryguje deklinację magnetyczną na podstawie Twojej lokalizacji.</string>
     <string name="magnetic_north">Północ magnetyczna</string>
-    <string name="haptic_feedback">Feedback dotykowy</string>
-    <string name="haptic_feedback_summary">Kompas wibruje gdy zmienia się kierunek</string>
+    <string name="haptic_feedback">Wibracje</string>
+    <string name="haptic_feedback_summary">Wibruje, gdy zmienia się kierunek.</string>
     <string name="display">Wyświetlanie</string>
     <string name="night_mode">Motyw</string>
-    <string name="night_mode_follow_system">Ustawienia systemowe</string>
+    <string name="night_mode_follow_system">Zgodnie z systemem</string>
     <string name="night_mode_no">Jasny</string>
     <string name="night_mode_yes">Ciemny</string>
-    <string name="about">O nas</string>
+    <string name="about">O aplikacji</string>
     <string name="author">Autor</string>
     <string name="license">Licencja</string>
     <string name="third_party_licenses">Licencje stron trzecich</string>
-    <string name="third_party_licenses_summary">Licencje dołączonych bibliotek open source</string>
+    <string name="third_party_licenses_summary">Licencje bibliotek open source używanych w tej aplikacji.</string>
     <string name="source_code">Kod źródłowy</string>
     <string name="version">Wersja</string>
-    <string name="error_message">Wystąpił błąd.\nMessage: %1$s\nCode: %2$s</string>
+    <string name="error_message">Wystąpił błąd.\nWiadomość: %1$s\nSzczegóły: %2$s</string>
     <string name="error">Błąd</string>
     <string name="ok">OK</string>
     <string name="no_thanks">Nie, dziękuję</string>

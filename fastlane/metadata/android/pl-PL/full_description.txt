@@ -1,15 +1,14 @@
 Otrzymasz dokładnie to, czego oczekujesz.
-Prosty i piękny kompas.
+Prosty i przejrzysty kompas.
 
 Funkcje:
-
 * Może wskazywać zarówno północ magnetyczną, jak i prawdziwą północ
-* Pokazuje dokładne stopnie i kierunki świata
+* Pokazuje dokładne stopnie i kierunek świata
 * Wyświetla status czujnika
-* Informacje zwrotne dotykowe (haptyczne)
+* Wibracje zwrotne
 * Jasny i ciemny motyw
 * Bez reklam
 * Bez śledzenia
-* Bez irytacji
+* Bez zbędnych uprawnień
 
 Miłej zabawy!

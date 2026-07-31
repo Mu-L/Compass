@@ -1,55 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
+    <string name="compass">מצפן</string>
     <string name="sensor_status">מצב חיישן</string>
-    <string name="compass_rose_image_description">מצפן מופנה צפונה</string>
+    <string name="lock_screen_rotation">נעילת סיבוב מסך</string>
+    <string name="compass_rose_image_description">שושנת רוחות</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
+    <string name="cardinal_direction_north">צפון</string>
     <string name="cardinal_direction_northeast">צפון מזרח</string>
     <string name="cardinal_direction_east">מזרח</string>
+    <string name="cardinal_direction_southeast">דרום מזרח</string>
     <string name="cardinal_direction_south">דרום</string>
     <string name="cardinal_direction_southwest">דרום מערב</string>
+    <string name="cardinal_direction_west">מערב</string>
     <string name="cardinal_direction_northwest">צפון מערב</string>
-    <string name="cardinal_direction_east_abbreviation">E</string>
-    <string name="cardinal_direction_south_abbreviation">S</string>
-    <string name="cardinal_direction_west_abbreviation">W</string>
-    <string name="sensor_accuracy_no_contact">חיישן לא זמין</string>
-    <string name="sensor_accuracy_unreliable">ערכי החיישן אינם אמינים</string>
+    <string name="cardinal_direction_north_abbreviation">צ</string>
+    <string name="cardinal_direction_east_abbreviation">מז</string>
+    <string name="cardinal_direction_south_abbreviation">ד</string>
+    <string name="cardinal_direction_west_abbreviation">מע</string>
+    <string name="sensor_accuracy_no_contact">אין קשר</string>
+    <string name="sensor_accuracy_unreliable">לא אמין</string>
     <string name="sensor_accuracy_low">דיוק נמוך</string>
-    <string name="sensor_accuracy_medium">דיוק ממוצע</string>
-    <string name="sensor_accuracy_high">דיוק מקסימלי</string>
+    <string name="sensor_accuracy_medium">דיוק בינוני</string>
+    <string name="sensor_accuracy_high">דיוק גבוה</string>
     <string name="sensor_error_message">חיישן לא זמין</string>
-    <string name="sensor_calibration_text">באפשרותך לנסות לשפר את דיוק החיישן שלך בכל עת על ידי סיבוב המכשיר בתבנית של הספרה 8.</string>
-    <string name="location_loading">ממתין לעדכון מיקום</string>
+    <string name="sensor_calibration_text">סובבו את המכשיר בתנועת שמונה כדי לשפר את דיוק החיישן.</string>
+    <string name="location_loading">ממתין למיקום…</string>
     <string name="location_error_message">מיקום לא זמין</string>
-    <string name="location_not_present">לא ניתן היה לקבוע את המיקום. חוזר לצפון המגנטי.</string>
+    <string name="location_not_present">מיקום לא זמין. מוצג צפון מגנטי במקום זאת.</string>
     <string name="location_reload">טען מיקום מחדש</string>
-    <string name="access_location_permission_rationale_title">אנו זקוקים להרשאת גישה למיקום שלך</string>
-    <string name="access_location_permission_rationale_message">כדי להציג את הצפון המדויק, אפליקציה זו צריכה לקבוע את הנטייה המגנטית בהתבסס על מיקומך הנוכחי.</string>
-    <string name="access_location_permission_denied">חסרה הרשאה לגישה למיקום. חוזר לצפון המגנטי.</string>
+    <string name="access_location_permission_rationale_title">נדרשת גישה למיקום</string>
+    <string name="access_location_permission_rationale_message">כדי להצביע לצפון האמיתי, האפליקציה זקוקה למיקום שלך כדי לחשב את הנטייה המגנטית.</string>
+    <string name="access_location_permission_denied">הרשאת מיקום נדחתה. מוצג צפון מגנטי במקום זאת.</string>
     <string name="settings">הגדרות</string>
-    <string name="true_north">צפון מדויק</string>
-    <string name="true_north_summary">לתיקון הנטייה המגנטית והצגת הצפון המדויק. נדרש גישה למיקום.</string>
+    <string name="true_north">צפון אמיתי</string>
+    <string name="true_north_summary">מתקן את הנטייה המגנטית באמצעות המיקום שלך.</string>
     <string name="magnetic_north">צפון מגנטי</string>
-    <string name="haptic_feedback">תגובת רטט</string>
-    <string name="haptic_feedback_summary">המצפן ירטוט כאשר הכיוון משתנה.</string>
+    <string name="haptic_feedback">משוב רטט</string>
+    <string name="haptic_feedback_summary">המצפן רוטט כאשר הכיוון משתנה.</string>
     <string name="display">תצוגה</string>
-    <string name="night_mode">עיצוב</string>
-    <string name="night_mode_follow_system">מערכת</string>
-    <string name="night_mode_no">מואר</string>
+    <string name="night_mode">ערכת נושא</string>
+    <string name="night_mode_follow_system">בהתאם למערכת</string>
+    <string name="night_mode_no">בהיר</string>
     <string name="night_mode_yes">כהה</string>
     <string name="about">אודות</string>
     <string name="author">יוצר</string>
-    <string name="license">רשיון</string>
-    <string name="third_party_licenses">רשיונות צד שלישי</string>
-    <string name="third_party_licenses_summary">רישיונות של ספריות קוד פתוח בשימוש</string>
+    <string name="license">רישיון</string>
+    <string name="third_party_licenses">רישיונות צד שלישי</string>
+    <string name="third_party_licenses_summary">רישיונות של ספריות הקוד הפתוח שבשימוש באפליקציה זו.</string>
     <string name="source_code">קוד מקור</string>
+    <string name="version">גרסה</string>
+    <string name="error_message">אירעה שגיאה.\nהודעה: %1$s\nפרטים: %2$s</string>
     <string name="error">שגיאה</string>
-    <string name="ok">בסדר</string>
+    <string name="ok">אישור</string>
     <string name="no_thanks">לא תודה</string>
-    <string name="compass">מצפן</string>
-    <string name="cardinal_direction_north_abbreviation">N</string>
-    <string name="cardinal_direction_southeast">דרום מזרח</string>
-    <string name="version">גירסא</string>
-    <string name="lock_screen_rotation">נעילת סיבוב מסך</string>
-    <string name="cardinal_direction_west">מערב</string>
-    <string name="error_message">אירעה שגיאה.\nהודעה: %1$s\nקוד: %2$s</string>
-    <string name="cardinal_direction_north">צפון</string>
 </resources>

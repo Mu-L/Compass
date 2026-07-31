@@ -1,5 +1,5 @@
 Esperotakoa jasoko duzu zehazki.
-Iparrorratz sinple eta eder bat.
+Iparrorratz sinple eta garbia.
 
 Ezaugarriak:
 * Ipar magnetikoa eta benetakoa erakusten ditu
@@ -9,6 +9,6 @@ Ezaugarriak:
 * Gai argi eta iluna
 * Iragarkirik ez
 * Jarraipenik ez
-* Trabarik ez
+* Beharrezkoak ez diren baimenik ez
 
 Gozatu!

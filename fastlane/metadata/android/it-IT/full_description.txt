@@ -1,13 +1,14 @@
-Avrai esattamente ciò che ti aspetti.
-Una bussola semplice e gradevole.
+Otterrai esattamente ciò che ti aspetti.
+Una bussola semplice e pulita.
 
-Funzioni:
+Funzionalità:
 * Può puntare sia al nord magnetico che al nord geografico
-* Mostra gradi esatti e direzione cardinale
+* Mostra i gradi esatti e la direzione cardinale
 * Mostra lo stato del sensore
 * Risposta tattile
-* Modalità notte automatica
+* Tema chiaro e scuro
 * Nessuna pubblicità
-* Zero seccature
+* Nessun tracciamento
+* Nessun permesso superfluo
 
 Divertiti!

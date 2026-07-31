@@ -1,14 +1,14 @@
 Je krijgt exact wat je verwacht.
-Een simpel en mooi kompas.
+Een eenvoudig en overzichtelijk kompas.
 
 Functies:
-* Je kunt het magnetisch noorden en het ware noorden vinden
-* Toont exacte graden en kardinale directie
-* Toont sensor status
+* Kan zowel het magnetisch noorden als het ware noorden aanwijzen
+* Toont exacte graden en windrichting
+* Toont de sensorstatus
 * Haptische feedback
 * Licht en donker thema
-* Geen advertensies
+* Geen advertenties
 * Geen trackers
-* Geen irritaties
+* Geen onnodige rechten
 
 Veel plezier!

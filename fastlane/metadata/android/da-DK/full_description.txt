@@ -1,15 +1,14 @@
-Du får præcis hvad du forventer. Et simpelt og smukt kompas.
+Du får præcis, hvad du forventer.
+Et enkelt og overskueligt kompas.
 
 Funktioner:
-
 * Kan pege mod magnetisk nord såvel som sand nord
-* Viser præcise grader og kardinalretning
+* Viser præcise grader og verdenshjørne
 * Viser sensorstatus
 * Haptisk feedback
 * Lyst og mørkt tema
 * Ingen reklamer
 * Ingen sporing
-* Ingen irritation
-* Libre/Open Source
+* Ingen unødvendige tilladelser
 
 God fornøjelse!

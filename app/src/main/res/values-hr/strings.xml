@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Compass.
+  ~ Copyright (C) 2026 Philipp Bobek <philipp.bobek@mailbox.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Compass is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="compass">Kompas</string>
     <string name="sensor_status">Status senzora</string>
     <string name="lock_screen_rotation">Zaključaj rotaciju zaslona</string>
-    <string name="compass_rose_image_description">Ruža kompasa pokazuje prema magnetskom sjeveru</string>
+    <string name="compass_rose_image_description">Ruža kompasa</string>
+    <string name="compass_rose_state_description">%1$s, %2$s</string>
     <string name="cardinal_direction_north">Sjever</string>
     <string name="cardinal_direction_northeast">Sjeveroistok</string>
     <string name="cardinal_direction_east">Istok</string>
@@ -17,10 +37,10 @@
     <string name="cardinal_direction_south_abbreviation">J</string>
     <string name="cardinal_direction_west_abbreviation">Z</string>
     <string name="sensor_accuracy_no_contact">Senzor nije dostupan</string>
-    <string name="sensor_accuracy_unreliable">Vrijednosti senzora su nepouzdane</string>
+    <string name="sensor_accuracy_unreliable">Nepouzdano</string>
     <string name="sensor_accuracy_low">Niska točnost</string>
-    <string name="sensor_accuracy_medium">Prosječna točnost</string>
-    <string name="sensor_accuracy_high">Maksimalna točnost</string>
+    <string name="sensor_accuracy_medium">Srednja točnost</string>
+    <string name="sensor_accuracy_high">Visoka točnost</string>
     <string name="sensor_error_message">Senzor nije dostupan</string>
     <string name="sensor_calibration_text">Možete pokušati poboljšati točnost senzora u bilo kojem trenutku okretanjem uređaja u obliku osmice.</string>
     <string name="location_loading">Čeka se ažuriranje lokacije</string>
@@ -31,24 +51,24 @@
     <string name="access_location_permission_rationale_message">Za pokazivanje pravog sjevera ova aplikacija mora odrediti magnetsku deklinaciju na temelju vaše trenutne lokacije.</string>
     <string name="access_location_permission_denied">Nedostaje dopuštenje za pristup lokaciji. Povratak na magnetski sjever.</string>
     <string name="settings">Postavke</string>
-    <string name="true_north">Pravi Sjever</string>
-    <string name="true_north_summary">Ispravlja magnetsku deklinaciju i pokazuje pravi sjever. Zahtijeva pristup vašoj lokaciji.</string>
-    <string name="magnetic_north">Magnetski Sjever</string>
+    <string name="true_north">Pravi sjever</string>
+    <string name="true_north_summary">Ispravlja magnetsku deklinaciju pomoću vaše lokacije.</string>
+    <string name="magnetic_north">Magnetski sjever</string>
     <string name="haptic_feedback">Vibracije</string>
     <string name="haptic_feedback_summary">Kompas vibrira kada se smjer promijeni.</string>
     <string name="display">Zaslon</string>
     <string name="night_mode">Tema</string>
-    <string name="night_mode_follow_system">Sustav</string>
-    <string name="night_mode_no">Svjetla</string>
+    <string name="night_mode_follow_system">Prati sustav</string>
+    <string name="night_mode_no">Svijetla</string>
     <string name="night_mode_yes">Tamna</string>
     <string name="about">O aplikaciji</string>
     <string name="author">Autor</string>
     <string name="license">Licenca</string>
     <string name="third_party_licenses">Licence trećih strana</string>
-    <string name="third_party_licenses_summary">Licence uključenih knjižnica otvorenog koda</string>
+    <string name="third_party_licenses_summary">Licence open-source biblioteka korištenih u ovoj aplikaciji.</string>
     <string name="source_code">Izvorni kod</string>
     <string name="version">Verzija</string>
-    <string name="error_message">Dogodila se greška.\nPoruka: %1$s\nKod: %2$s</string>
+    <string name="error_message">Dogodila se greška.\nPoruka: %1$s\nPojedinosti: %2$s</string>
     <string name="error">Greška</string>
     <string name="ok">U redu</string>
     <string name="no_thanks">Ne, hvala</string>

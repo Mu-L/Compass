@@ -1,12 +1,14 @@
 Dobit ćete točno ono što očekujete.
-Jednostavan i lijep kompas koji pokazuje prema magnetskom sjeveru.
+Jednostavan i uredan kompas.
 
 Značajke:
-* Pokazuje na magnetski sjever
-* Prikazuje točne stupnjeve i kardinalni smjer
+* Pokazuje magnetski sjever kao i pravi sjever
+* Prikazuje točne stupnjeve i glavni smjer
 * Prikazuje status senzora
-* Automatski noćni način rada
-* Nema reklama
-* Nema smetnji
+* Vibracije
+* Svijetla i tamna tema
+* Bez oglasa
+* Bez praćenja
+* Bez nepotrebnih dopuštenja
 
-Zabavi se!
+Zabavite se!

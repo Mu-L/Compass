@@ -1,12 +1,14 @@
 Umduğunuz şeyi tam olarak bulacaksınız.
-Manyetik kuzeyi gösteren basit ve güzel bir pusula. 
+Basit ve sade bir pusula.
 
 Özellikler:
-* Manyetik kuzeyi gösterir
-* Kardinal yönü ve tam derecesini gösterir
+* Hem manyetik kuzeyi hem de gerçek kuzeyi gösterebilir
+* Tam dereceyi ve yönü gösterir
 * Sensör durumunu gösterir
-* Otomatik gece modu
+* Dokunsal geribildirim
+* Açık ve koyu tema
 * Reklamsız
-* Can sıkıcı şeyler yok
+* Takipçisiz
+* Gereksiz izin yok
 
 Tadını çıkarın!
