@@ -1,0 +1,6 @@
+- Wyświetlanie pełnego tekstu licencji bibliotek stron trzecich
+- Wyświetlanie własnej licencji aplikacji wewnątrz aplikacji zamiast otwierania przeglądarki
+- Naprawiono ikony paska stanu, które nie podążały za motywem aplikacji
+- Naprawiono TalkBack, który zawsze ogłaszał północ na róży wiatrów
+- Dodano tłumaczenie chińskie (Hongkong) i chińskie (Tajwan)
+- Ulepszono i uzupełniono tłumaczenia dla wszystkich języków

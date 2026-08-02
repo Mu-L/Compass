@@ -1,0 +1,6 @@
+- Näytä kolmannen osapuolen kirjastojen koko lisenssiteksti
+- Näytä sovelluksen oma lisenssi sovelluksessa selaimen avaamisen sijaan
+- Korjattu tilapalkin kuvakkeet, jotka eivät noudattaneet sovelluksen teemaa
+- Korjattu TalkBackin jatkuva pohjoisen ilmoittaminen kompassiruusussa
+- Lisätty kiinan (Hongkong) ja kiinan (Taiwan) käännökset
+- Parannettu ja täydennetty kaikkien kielten käännökset

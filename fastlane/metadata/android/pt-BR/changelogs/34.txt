@@ -1,0 +1,6 @@
+- Exibição do texto completo das licenças de bibliotecas de terceiros
+- Exibição da própria licença do app dentro do app em vez de abrir um navegador
+- Corrigidos os ícones da barra de status que não seguiam o tema do app
+- Corrigido o TalkBack que sempre anunciava o norte na rosa dos ventos
+- Adicionadas as traduções para chinês (Hong Kong) e chinês (Taiwan)
+- Traduções aprimoradas e completadas para todos os idiomas

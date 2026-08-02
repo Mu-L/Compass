@@ -1,0 +1,6 @@
+- Hirugarrenen liburutegien lizentzia-testu osoa erakusten da orain
+- Aplikazioaren lizentzia bera aplikazioan bertan erakusten da, arakatzailea ireki gabe
+- Konpondua: egoera-barrako ikonoek ez zuten aplikazioaren gaia jarraitzen
+- Konpondua: TalkBack-ek beti iparra iragartzen zuen iparrorratzaren arrosan
+- Txinera (Hong Kong) eta txinera (Taiwan) itzulpenak gehitu dira
+- Hizkuntza guztien itzulpenak hobetu eta osatu dira

@@ -1,0 +1,6 @@
+- Viser fuld licenstekst for tredjepartsbiblioteker
+- Viser appens egen licens i appen i stedet for at åbne en browser
+- Rettet statusbjælkeikoner, der ikke fulgte appens eget tema
+- Rettet at TalkBack altid annoncerede nord på kompasrosen
+- Tilføjet kinesiske (Hongkong) og kinesiske (Taiwan) oversættelser
+- Forbedrede og fuldførte oversættelser for alle sprog

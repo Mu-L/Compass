@@ -1,0 +1,6 @@
+- Affichage du texte complet des licences des bibliothèques tierces
+- Affichage de la propre licence de l'application directement dans l'application au lieu d'ouvrir un navigateur
+- Correction des icônes de la barre d'état qui ne suivaient pas le thème de l'application
+- Correction de TalkBack qui annonçait toujours le nord sur la rose des vents
+- Ajout des traductions en chinois (Hong Kong) et chinois (Taïwan)
+- Amélioration et complément des traductions pour toutes les langues

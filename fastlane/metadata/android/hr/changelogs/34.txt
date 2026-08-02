@@ -1,0 +1,6 @@
+- Prikaz punog teksta licenci za biblioteke trećih strana
+- Prikaz vlastite licence aplikacije unutar aplikacije umjesto otvaranja preglednika
+- Ispravljene ikone trake stanja koje nisu pratile temu aplikacije
+- Ispravljeno stalno najavljivanje sjevera od strane TalkBacka na ruži vjetrova
+- Dodani prijevodi na kineski (Hong Kong) i kineski (Tajvan)
+- Poboljšani i dovršeni prijevodi za sve jezike

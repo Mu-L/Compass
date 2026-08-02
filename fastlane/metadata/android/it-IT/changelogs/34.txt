@@ -1,0 +1,6 @@
+- Mostrato il testo completo delle licenze delle librerie di terze parti
+- Mostrata la licenza dell'app direttamente nell'app invece di aprire un browser
+- Corrette le icone della barra di stato che non seguivano il tema dell'app
+- Corretto il TalkBack che annunciava sempre nord sulla rosa dei venti
+- Aggiunte le traduzioni in cinese (Hong Kong) e cinese (Taiwan)
+- Migliorate e completate le traduzioni per tutte le lingue

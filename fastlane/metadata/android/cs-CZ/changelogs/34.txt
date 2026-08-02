@@ -1,0 +1,6 @@
+- Zobrazení plného textu licencí knihoven třetích stran
+- Zobrazení vlastní licence aplikace přímo v ní místo otevírání prohlížeče
+- Opraveny ikony stavového řádku, které nesledovaly motiv aplikace
+- Opraveno, že TalkBack vždy oznamoval sever na větrné růžici
+- Přidány překlady do čínštiny (Hongkong) a čínštiny (Tchaj-wan)
+- Vylepšeny a dokončeny překlady pro všechny jazyky

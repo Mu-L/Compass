@@ -1,0 +1,6 @@
+- Memaparkan teks lesen penuh untuk pustaka pihak ketiga
+- Memaparkan lesen aplikasi sendiri di dalam aplikasi dan bukannya membuka pelayar
+- Membetulkan ikon bar status yang tidak mengikut tema aplikasi
+- Membetulkan TalkBack yang sentiasa mengumumkan utara pada mawar kompas
+- Menambah terjemahan bahasa Cina (Hong Kong) dan bahasa Cina (Taiwan)
+- Menambah baik dan melengkapkan terjemahan untuk semua bahasa

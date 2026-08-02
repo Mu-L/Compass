@@ -1,0 +1,6 @@
+- Đã hiển thị đầy đủ văn bản giấy phép của các thư viện bên thứ ba
+- Đã hiển thị giấy phép riêng của ứng dụng ngay trong ứng dụng thay vì mở trình duyệt
+- Đã sửa lỗi biểu tượng thanh trạng thái không theo chủ đề của ứng dụng
+- Đã sửa lỗi TalkBack luôn thông báo hướng bắc trên la bàn
+- Đã thêm bản dịch tiếng Trung (Hồng Kông) và tiếng Trung (Đài Loan)
+- Đã cải thiện và hoàn thiện bản dịch cho tất cả ngôn ngữ

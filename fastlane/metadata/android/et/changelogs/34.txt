@@ -1,0 +1,6 @@
+- Kolmandate osapoolte teekide täielik litsentsitekst on nüüd nähtaval
+- Rakenduse enda litsents kuvatakse nüüd rakenduses, mitte brauseris
+- Parandatud olekuriba ikoonid, mis ei järginud rakenduse kujundust
+- Parandatud viga, kus TalkBack teatas kompassiroosil alati põhja
+- Lisatud hiina (Hongkongi) ja hiina (Taiwani) tõlked
+- Täiustatud ja lõpetatud kõigi keelte tõlked

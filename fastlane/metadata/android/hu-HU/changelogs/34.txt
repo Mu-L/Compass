@@ -1,0 +1,6 @@
+- A harmadik féltől származó könyvtárak teljes licencszövegének megjelenítése
+- Az alkalmazás saját licencének megjelenítése az alkalmazáson belül böngésző megnyitása helyett
+- Javítva: az állapotsor ikonjai nem követték az alkalmazás témáját
+- Javítva: a TalkBack mindig északot jelentett be az iránytű rózsáján
+- Kínai (Hongkong) és kínai (Tajvan) fordítás hozzáadva
+- Az összes nyelv fordítása javítva és kiegészítve

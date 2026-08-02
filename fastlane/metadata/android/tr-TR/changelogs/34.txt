@@ -1,0 +1,6 @@
+- Üçüncü taraf kitaplıkların tam lisans metni gösteriliyor
+- Uygulamanın kendi lisansı, tarayıcı açmak yerine artık uygulama içinde gösteriliyor
+- Durum çubuğu simgelerinin uygulama temasını izlememesi sorunu giderildi
+- TalkBack'in pusula gülünde her zaman kuzeyi anons etmesi sorunu giderildi
+- Çince (Hong Kong) ve Çince (Tayvan) çevirileri eklendi
+- Tüm diller için çeviriler iyileştirildi ve tamamlandı

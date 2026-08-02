@@ -1,0 +1,6 @@
+- Fullständig licenstext för tredjepartsbibliotek visas nu
+- Appens egen licens visas nu i appen istället för att öppna en webbläsare
+- Statusfältsikoner som inte följde appens tema har åtgärdats
+- TalkBack som alltid meddelade norr på kompassrosen har åtgärdats
+- Kinesisk (Hongkong)- och kinesisk (Taiwan)-översättning tillagd
+- Översättningar för alla språk förbättrade och kompletterade

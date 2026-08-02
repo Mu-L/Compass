@@ -1,0 +1,6 @@
+- Mostrado el texto completo de las licencias de terceros
+- Mostrada la propia licencia de la app dentro de la app en lugar de abrir un navegador
+- Corregidos los iconos de la barra de estado que no seguían el tema de la app
+- Corregido que TalkBack anunciara siempre el norte en la rosa de los vientos
+- Añadidas las traducciones al chino (Hong Kong) y al chino (Taiwán)
+- Mejoradas y completadas las traducciones de todos los idiomas

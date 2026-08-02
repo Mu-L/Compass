@@ -1,0 +1,6 @@
+- Volledige licentietekst voor bibliotheken van derden toegevoegd
+- Eigen licentie van de app wordt nu in de app zelf getoond in plaats van in de browser
+- Statusbalkpictogrammen volgen nu het thema van de app
+- TalkBack kondigt op de kompasroos niet meer steeds noorden aan
+- Chinese (Hongkong) en Chinese (Taiwan) vertaling toegevoegd
+- Vertalingen voor alle talen verbeterd en voltooid

@@ -1,0 +1,6 @@
+- Vollständigen Lizenztext für Drittanbieter-Bibliotheken anzeigen
+- Eigene Lizenz der App direkt in der App anzeigen statt im Browser
+- Fehler behoben, bei dem Statusleisten-Symbole nicht dem App-Design folgten
+- Fehler behoben, bei dem TalkBack auf der Kompassrose immer Norden ansagte
+- Chinesische (Hongkong) und chinesische (Taiwan) Übersetzung hinzugefügt
+- Übersetzungen für alle Sprachen verbessert und vervollständigt

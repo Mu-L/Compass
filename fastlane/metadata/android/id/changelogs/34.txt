@@ -1,0 +1,6 @@
+- Menampilkan teks lisensi lengkap untuk pustaka pihak ketiga
+- Menampilkan lisensi aplikasi sendiri di dalam aplikasi, bukan membuka browser
+- Memperbaiki ikon bilah status yang tidak mengikuti tema aplikasi
+- Memperbaiki TalkBack yang selalu mengumumkan utara pada mawar kompas
+- Menambahkan terjemahan bahasa Tionghoa (Hong Kong) dan Tionghoa (Taiwan)
+- Meningkatkan dan melengkapi terjemahan untuk semua bahasa

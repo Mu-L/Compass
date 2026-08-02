@@ -1,0 +1,6 @@
+- Display full license text for third-party libraries
+- Show the app's own license in-app instead of opening a browser
+- Fixed status bar icons not following the app's own theme
+- Fixed TalkBack always announcing north on the compass rose
+- Added Chinese (Hong Kong) and Chinese (Taiwan) translations
+- Improved and completed translations for all languages
